@@ -1,95 +1,197 @@
-#------------------------------------------------------------
-#        Script MySQL.
-#------------------------------------------------------------
+DROP DATABASE IF EXISTS formation;
+
+CREATE DATABASE IF NOT EXISTS formation;
+USE formation;
+# -----------------------------------------------------------------------------
+#       TABLE : NATIONALITE
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS NATIONALITE
+ (
+   ID_NATIONALITE INTEGER(2) NOT NULL  ,
+   LIBELLE VARCHAR(20) NULL  
+   , PRIMARY KEY (ID_NATIONALITE) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : FORMATEUR
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS FORMATEUR
+ (
+   ID_FORMATEUR INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   ID_SALLE INTEGER(2) NOT NULL  ,
+   NOM VARCHAR(20) NULL  ,
+   PRENOM VARCHAR(20) NULL  
+   , PRIMARY KEY (ID_FORMATEUR) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE FORMATEUR
+# -----------------------------------------------------------------------------
 
 
-#------------------------------------------------------------
-# Table: Formateur
-#------------------------------------------------------------
+CREATE  INDEX I_FK_FORMATEUR_SALLE
+     ON FORMATEUR (ID_SALLE ASC);
 
-CREATE TABLE Formateur(
-        Id_formateur Int NOT NULL ,
-        Nom          Varchar (20) ,
-        Prenom       Varchar (20) ,
-        Id_salle     Int ,
-        PRIMARY KEY (Id_formateur )
-)ENGINE=InnoDB;
+# -----------------------------------------------------------------------------
+#       TABLE : STAGIAIRE
+# -----------------------------------------------------------------------------
 
+CREATE TABLE IF NOT EXISTS STAGIAIRE
+ (
+   ID INTEGER(2) NOT NULL AUTO_INCREMENT ,
+   ID_TYPE_FORMATION INTEGER(2) NULL  ,
+   ID_NATIONALITE INTEGER(2) NOT NULL  ,
+   NOM VARCHAR(20) NULL  ,
+   PRENOM VARCHAR(20) NULL  
+   , PRIMARY KEY (ID) 
+ ) 
+ comment = "";
 
-#------------------------------------------------------------
-# Table: salle
-#------------------------------------------------------------
-
-CREATE TABLE salle(
-        Id_salle Int NOT NULL ,
-        Libelle  Varchar (25) ,
-        PRIMARY KEY (Id_salle )
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: nationalite
-#------------------------------------------------------------
-
-CREATE TABLE nationalite(
-        Id_nationalite Int NOT NULL ,
-        Libelle        Varchar (20) ,
-        PRIMARY KEY (Id_nationalite )
-)ENGINE=InnoDB;
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE STAGIAIRE
+# -----------------------------------------------------------------------------
 
 
-#------------------------------------------------------------
-# Table: stagiaire
-#------------------------------------------------------------
+CREATE  INDEX I_FK_STAGIAIRE_TYPE_FORMATION
+     ON STAGIAIRE (ID_TYPE_FORMATION ASC);
 
-CREATE TABLE stagiaire(
-        Id                Int NOT NULL ,
-        Nom               Varchar (20) ,
-        Prenom            Varchar (20) ,
-        Id_nationalite    Int ,
-        Id_type_formation Int ,
-        PRIMARY KEY (Id )
-)ENGINE=InnoDB;
+CREATE  INDEX I_FK_STAGIAIRE_NATIONALITE
+     ON STAGIAIRE (ID_NATIONALITE ASC);
+
+# -----------------------------------------------------------------------------
+#       TABLE : DATE
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS DATE
+ (
+   DATE_DEBUT_FORMATION DATETIME NOT NULL  
+   , PRIMARY KEY (DATE_DEBUT_FORMATION) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : SALLE
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS SALLE
+ (
+   ID_SALLE INTEGER(2) NOT NULL  ,
+   LIBELLE VARCHAR(25) NULL  
+   , PRIMARY KEY (ID_SALLE) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : TYPE_FORMATION
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS TYPE_FORMATION
+ (
+   ID_TYPE_FORMATION INTEGER(2) NOT NULL  ,
+   LIBELLE VARCHAR(25) NULL  
+   , PRIMARY KEY (ID_TYPE_FORMATION) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       TABLE : STAGIAIRE_FORMATEUR
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS STAGIAIRE_FORMATEUR
+ (
+   ID INTEGER(2) NOT NULL  ,
+   ID_FORMATEUR INTEGER(2) NOT NULL  ,
+   DATE_DEBUT DATE NULL  ,
+   DATE_FIN DATE NULL  
+   , PRIMARY KEY (ID,ID_FORMATEUR) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE STAGIAIRE_FORMATEUR
+# -----------------------------------------------------------------------------
 
 
-#------------------------------------------------------------
-# Table: type_formation
-#------------------------------------------------------------
+CREATE  INDEX I_FK_STAGIAIRE_FORMATEUR_STAGIAIRE
+     ON STAGIAIRE_FORMATEUR (ID ASC);
 
-CREATE TABLE type_formation(
-        Id_type_formation Int NOT NULL ,
-        Libelle           Varchar (25) ,
-        PRIMARY KEY (Id_type_formation )
-)ENGINE=InnoDB;
+CREATE  INDEX I_FK_STAGIAIRE_FORMATEUR_FORMATEUR
+     ON STAGIAIRE_FORMATEUR (ID_FORMATEUR ASC);
+
+# -----------------------------------------------------------------------------
+#       TABLE : TYPE_FORMATION_FORMATEUR
+# -----------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS TYPE_FORMATION_FORMATEUR
+ (
+   ID_FORMATEUR INTEGER(2) NOT NULL  ,
+   ID_TYPE_FORMATION INTEGER(2) NOT NULL  ,
+   DATE_DEBUT_FORMATION DATETIME NOT NULL  ,
+   DATE_FIN_FORMATION DATE NULL  
+   , PRIMARY KEY (ID_FORMATEUR,ID_TYPE_FORMATION,DATE_DEBUT_FORMATION) 
+ ) 
+ comment = "";
+
+# -----------------------------------------------------------------------------
+#       INDEX DE LA TABLE TYPE_FORMATION_FORMATEUR
+# -----------------------------------------------------------------------------
 
 
-#------------------------------------------------------------
-# Table: relation5
-#------------------------------------------------------------
+CREATE  INDEX I_FK_TYPE_FORMATION_FORMATEUR_FORMATEUR
+     ON TYPE_FORMATION_FORMATEUR (ID_FORMATEUR ASC);
 
-CREATE TABLE relation5(
-        Date_debut   Date ,
-        Date_fin     Date ,
-        Id           Int NOT NULL ,
-        Id_formateur Int NOT NULL ,
-        PRIMARY KEY (Id ,Id_formateur )
-)ENGINE=InnoDB;
+CREATE  INDEX I_FK_TYPE_FORMATION_FORMATEUR_TYPE_FORMATION
+     ON TYPE_FORMATION_FORMATEUR (ID_TYPE_FORMATION ASC);
+
+CREATE  INDEX I_FK_TYPE_FORMATION_FORMATEUR_DATE
+     ON TYPE_FORMATION_FORMATEUR (DATE_DEBUT_FORMATION ASC);
 
 
-#------------------------------------------------------------
-# Table: type_formation_formateur
-#------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       CREATION DES REFERENCES DE TABLE
+# -----------------------------------------------------------------------------
 
-CREATE TABLE type_formation_formateur(
-        Id_formateur      Int NOT NULL ,
-        Id_type_formation Int NOT NULL ,
-        PRIMARY KEY (Id_formateur ,Id_type_formation )
-)ENGINE=InnoDB;
 
-ALTER TABLE Formateur ADD CONSTRAINT FK_Formateur_Id_salle FOREIGN KEY (Id_salle) REFERENCES salle(Id_salle);
-ALTER TABLE stagiaire ADD CONSTRAINT FK_stagiaire_Id_nationalite FOREIGN KEY (Id_nationalite) REFERENCES nationalite(Id_nationalite);
-ALTER TABLE stagiaire ADD CONSTRAINT FK_stagiaire_Id_type_formation FOREIGN KEY (Id_type_formation) REFERENCES type_formation(Id_type_formation);
-ALTER TABLE relation5 ADD CONSTRAINT FK_relation5_Id FOREIGN KEY (Id) REFERENCES stagiaire(Id);
-ALTER TABLE relation5 ADD CONSTRAINT FK_relation5_Id_formateur FOREIGN KEY (Id_formateur) REFERENCES Formateur(Id_formateur);
-ALTER TABLE type_formation_formateur ADD CONSTRAINT FK_type_formation_formateur_Id_formateur FOREIGN KEY (Id_formateur) REFERENCES Formateur(Id_formateur);
-ALTER TABLE type_formation_formateur ADD CONSTRAINT FK_type_formation_formateur_Id_type_formation FOREIGN KEY (Id_type_formation) REFERENCES type_formation(Id_type_formation);
+ALTER TABLE FORMATEUR 
+  ADD FOREIGN KEY FK_FORMATEUR_SALLE (ID_SALLE)
+      REFERENCES SALLE (ID_SALLE) ;
+
+
+ALTER TABLE STAGIAIRE 
+  ADD FOREIGN KEY FK_STAGIAIRE_TYPE_FORMATION (ID_TYPE_FORMATION)
+      REFERENCES TYPE_FORMATION (ID_TYPE_FORMATION) ;
+
+
+ALTER TABLE STAGIAIRE 
+  ADD FOREIGN KEY FK_STAGIAIRE_NATIONALITE (ID_NATIONALITE)
+      REFERENCES NATIONALITE (ID_NATIONALITE) ;
+
+
+ALTER TABLE STAGIAIRE_FORMATEUR 
+  ADD FOREIGN KEY FK_STAGIAIRE_FORMATEUR_STAGIAIRE (ID)
+      REFERENCES STAGIAIRE (ID) ;
+
+
+ALTER TABLE STAGIAIRE_FORMATEUR 
+  ADD FOREIGN KEY FK_STAGIAIRE_FORMATEUR_FORMATEUR (ID_FORMATEUR)
+      REFERENCES FORMATEUR (ID_FORMATEUR) ;
+
+
+ALTER TABLE TYPE_FORMATION_FORMATEUR 
+  ADD FOREIGN KEY FK_TYPE_FORMATION_FORMATEUR_FORMATEUR (ID_FORMATEUR)
+      REFERENCES FORMATEUR (ID_FORMATEUR) ;
+
+
+ALTER TABLE TYPE_FORMATION_FORMATEUR 
+  ADD FOREIGN KEY FK_TYPE_FORMATION_FORMATEUR_TYPE_FORMATION (ID_TYPE_FORMATION)
+      REFERENCES TYPE_FORMATION (ID_TYPE_FORMATION) ;
+
+
+ALTER TABLE TYPE_FORMATION_FORMATEUR 
+  ADD FOREIGN KEY FK_TYPE_FORMATION_FORMATEUR_DATE (DATE_DEBUT_FORMATION)
+      REFERENCES DATE (DATE_DEBUT_FORMATION) ;
+
