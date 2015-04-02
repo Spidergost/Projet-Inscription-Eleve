@@ -1,4 +1,4 @@
-DELETE FROM Formateur;
+﻿DELETE FROM Formateur;
 DELETE FROM Nationalite;
 DELETE FROM salle;
 DELETE FROM stagiaire;
@@ -41,3 +41,11 @@ INSERT INTO Type-Formation-formateur VALUES (2, 4);
 
 INSERT INTO Type-Formation VALUES (1, 'Web designer');
 INSERT INTO Type-Formation VALUES (2, 'Développeur');
+
+SELECT * FROM Formateur;
+SELECT * FROM Nationalite;
+SELECT * FROM salle;
+SELECT * FROM stagiaire;
+SELECT * FROM stagiaire-formateur;
+SELECT * FROM Type-Formation-formateur;
+SELECT * FROM Type-Formation; 
