@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="/css/index.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/Projet-Inscription-Eleve/css/index.css" media="screen" />
         <title>Accueil</title>
     </head>
 
