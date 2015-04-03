@@ -18,15 +18,15 @@
 			</div>
 
 			<div class="page_3">
-				<a href="insertion-stagiaire.php"> Supprimer un stagiaire </a>			
+				<a href="suppression-stagiaire.php"> Supprimer un stagiaire </a>			
 			</div>
 			
 			<div class="page_4">
-				<a href="insertion-stagiaire.php"> Modifier les informations d'un stagiaire </a>			
+				<a href="modification-stagiaire.php"> Modifier les informations d'un stagiaire </a>			
 			</div>
 			
 			<div class="page_5">
-				<a href="insertion-stagiaire.php"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </a>			
+				<a href="listing.php"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </a>			
 			</div>
 			
 			<div class="page_6">
