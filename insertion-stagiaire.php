@@ -37,6 +37,15 @@
     	</form>
 
     	<a href="index.php">Retour au menu</a>
+
+    	<?php
+    		// Lancement script JS de confirmation pour l'insertion de stagiaire.
+			if (isset($_GET['erreur'])) {
+				if ($_GET['erreur']==1) {
+					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
+				}
+			}	
+		?>
     
     </body>
 </html>

@@ -47,7 +47,7 @@
         }
     }
     else {
-        echo "ERREUR : remplissez tout le formulaire d'insertion !";
+        header('Location: insertion-stagiaire.php?erreur=1');
     }
-
+    
 ?>
