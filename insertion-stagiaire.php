@@ -35,5 +35,8 @@
 				<input type="submit" value="Envoyer" />
 	     	</p>
     	</form>
+
+    	<a href="index.php">Retour au menu</a>
+    
     </body>
 </html>
