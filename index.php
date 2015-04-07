@@ -40,6 +40,7 @@
 			if (isset($_GET['insertion'])) {
 				if ($_GET['insertion']==1) {
 					echo "<script>alert('Insertion de stagiaire réussi !')</script>";
+					echo correction;
 				}
 			}	
 		?>
