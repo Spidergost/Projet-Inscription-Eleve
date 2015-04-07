@@ -7,6 +7,11 @@
     </head>
 
     <body>
+	
+		<div class="titre">
+			<a > Accueil </a>
+		</div>
+		
 		<div class="liens">
 			
 			<div class="page_1">
