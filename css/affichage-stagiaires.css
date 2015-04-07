@@ -8,7 +8,12 @@ body {
 }
 .titre {
 	border: 1px black solid;
-		margin-top:25px5px;
+	margin-top:25px5px;
 	margin-bottom:18px;
 	background: green;
+}
+.styletableau{
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
 }
