@@ -9,7 +9,7 @@
     <body>
 	
 		<div class="titre">
-			<a > Accueil </a>
+			<a > <h1> Accueil </h1> </a>
 		</div>
 		
 		<div class="liens">
