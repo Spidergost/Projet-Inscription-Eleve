@@ -12,18 +12,8 @@
 		
 		<h1><?php include('affichage-stagiaires.php'); ?></h1>
 				
-    	<form method="post" action="traitement-insertion.php" class="formulaire">
-	    	<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
-		  	<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
-	      	<p>
-				Nationalité : 
-				<select name="nationalite">
-						<option selected="selected" value="1"> Français</option>
-						<option value="2"> Anglais</option>
-						<option value="3"> Allemand</option>
-						<option value="4"> Russe</option>
-			    </select>  
-	      	</p>
+    	<form method="post" action="traitement-modification.php" class="formulaire-choix">
+	    	<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
 	      
 	      	<p>
 				Type de la formation : 
