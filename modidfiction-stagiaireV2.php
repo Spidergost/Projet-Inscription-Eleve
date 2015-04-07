@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<LINK href="modification-stagiaire.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
 <title>Modification Stagiaire</title>
 </head>
 <body>
