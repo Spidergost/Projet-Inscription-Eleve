@@ -2,12 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Modification Stagiaire</title>
+		<link rel="stylesheet" type="text/css" href="css/modification-stagiaire.css" media="screen" />
+        <title>Modification d'un Stagiaire</title>
     </head>
 
     <body>
 		<div class="titre">
-			<a > <h1> Modification d'un Stagiaire</h1> </a>
+			<a > <h1> Modification d'un Stagiaire </h1> </a>
 		</div>
 		
 		<h1><?php include('affichage-stagiaires.php'); ?></h1>
