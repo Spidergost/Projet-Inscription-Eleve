@@ -1,0 +1,33 @@
+body {
+	margin-top:5px;
+	margin-left:150px;
+	margin-right:150px;
+	margin-bottom:5px;
+	background: gray;
+	text-align: center;
+}
+.titre {
+	border: 1px black solid;
+		margin-top:25px5px;
+	margin-bottom:18px;
+	background: green;
+}
+.affichage {
+	text-align: center;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px black solid;
+}
+.formulaire-choix {
+	border: 1px black solid;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.styletableau {
+	margin-left: auto;
+	margin-right: auto;
+	}
+		

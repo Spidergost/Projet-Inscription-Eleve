@@ -1,20 +1,14 @@
 body {
-margin-top:5px;
-margin-left:150px;
-margin-right:150px;
-margin-bottom:5px;
-background: gray;
-text-align: center;
+	margin-top:5px;
+	margin-left:150px;
+	margin-right:150px;
+	margin-bottom:5px;
+	background: gray;
+	text-align: center;
 }
-.bandeau {
-text-align:center;
-width:1370 px;
-height:75 px;
-background:
-font-family: Arial, sans-serif;
-background-color:#E0F8F7;
-}
-h1 {
-border: 1px black solid;
-background: green;
+.titre {
+	border: 1px black solid;
+		margin-top:25px5px;
+	margin-bottom:18px;
+	background: green;
 }
