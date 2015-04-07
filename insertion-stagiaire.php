@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/insertion-stagiaire.css" media="screen" />
         <title>Insertion de stagiaire</title>
     </head>
 
     <body>
 
-    	<h1>Insérer un stagiaire en formation</h1>
+    	<h1> Insérer un stagiaire en formation </h1>
 
     	<form method="post" action="traitement-insertion.php" class="formulaire">
 	    	<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>

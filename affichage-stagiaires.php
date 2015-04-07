@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/affichage-stagiaires.css" media="screen" />
         <title>Liste des stagiaires</title>
     </head>
 
