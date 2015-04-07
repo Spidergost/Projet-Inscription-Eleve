@@ -51,7 +51,7 @@
 					}
 					echo "</tr>";
 				}
-				echo "</table> <br />";
+				echo "</table class='styletableau' border=\"1\"> <br />";
 
 		    }
 		    catch (PDOException $e) {
