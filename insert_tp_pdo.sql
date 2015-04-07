@@ -1,51 +1,52 @@
-﻿DELETE FROM formateur;
-DELETE FROM nationalite;
-DELETE FROM salle;
-DELETE FROM stagiaire;
-DELETE FROM stagiaire_formateur;
-DELETE FROM type_formation_formateur;
-DELETE FROM type_formation;
+﻿################################
+# Insertion des données
+################################
 
-INSERT INTO formateur VALUES (1,'Dupont', 'Robert', 1);
-INSERT INTO formateur VALUES (2, 'Martin', 'Alexis', 2);
-INSERT INTO formateur VALUES (3, 'Durand', 'Paul', 3);
-INSERT INTO formateur VALUES (4, 'Duval', 'Alain', 4);
+INSERT INTO `SALLE` (`ID_SALLE`, `LIBELLE`) VALUES
+(1,	'101'),
+(2,	'102'),
+(3,	'201'),
+(4,	'202');
 
-INSERT INTO nationalite VALUES (1, 'Français');
-INSERT INTO nationalite VALUES (2, 'Anglais');
-INSERT INTO nationalite VALUES (3, 'Allemand');
-INSERT INTO nationalite VALUES (4, 'Russe');
+INSERT INTO `FORMATEUR` (`ID_FORMATEUR`, `NOM`, `PRENOM`, `ID_SALLE`) VALUES
+	(1,	'Dupont', 'Robert', 1),
+	(2,	'Martin', 'Alexis', 2),
+	(3,	'Durand', 'Paul', 3),
+	(4,	'Duval', 'Alain', 4);
 
-INSERT INTO salle VALUES (1, '101');
-INSERT INTO salle VALUES (1, '102');
-INSERT INTO salle VALUES (1, '201');
-INSERT INTO salle VALUES (1, '202');
+INSERT INTO `NATIONALITE` (`ID_NATIONALITE`, `LIBELLE`) VALUES
+(1,	'Français'),
+(2,	'Anglais'),
+(3,	'Allemand'),
+(4,	'Russe');
 
-INSERT INTO salle VALUES (1, 'Sharapova', 'Nadia', 4, 1);
-INSERT INTO salle VALUES (2, 'Monfils', 'Body', 1, 2);
-INSERT INTO salle VALUES (8, 'Murray', 'Bill', 2, 1);
-INSERT INTO salle VALUES (4, 'Becker', 'Josephine', 3, 2);
-INSERT INTO salle VALUES (6, 'Dupont', 'Robert', 1, 2);
+INSERT INTO `TYPE_FORMATION` (`ID_TYPE_FORMATION`, `LIBELLE`) VALUES
+(1,	'Web designer'),
+(2,	'Développeur');
 
-INSERT INTO stagiaire_formateur VALUES (1, 1, '2011-07-25', '2011-10-28');
-INSERT INTO stagiaire_formateur VALUES (1, 2, '2011-10-31', '2011-12-30');
-INSERT INTO stagiaire_formateur VALUES (2, 4, '2011-08-31', '2011-10-18');
-INSERT INTO stagiaire_formateur VALUES (8, 2, '2011-08-15', '2012-02-15');
-INSERT INTO stagiaire_formateur VALUES (6, 4, '2011-08-21', '2011-10-21');
-INSERT INTO stagiaire_formateur VALUES (4, 3, '2011-08-17', '2012-02-21');
+INSERT INTO `STAGIAIRE` (`ID`, `NOM`, `PRENOM`, `ID_NATIONALITE`, `ID_TYPE_FORMATION`) VALUES
+(1,	'Sharapova', 'Nadia', 4, 1),
+(2,	'Monfils', 'Boby', 1, 2),
+(4,	'Becker', 'Josephine', 3, 2),
+(6,	'Dupont', 'Robert', 1, 2),
+(8,	'Murray', 'Bill', 2, 1);
 
-INSERT INTO type_formation_formateur VALUES (1, 1);
-INSERT INTO type_formation_formateur VALUES (1, 2);
-INSERT INTO type_formation_formateur VALUES (2, 3);
-INSERT INTO type_formation_formateur VALUES (2, 4);
+INSERT INTO DATE VALUES
+	('2011-07-25'),
+	('2011-09-25'),
+	('2010-08-21'),
+	('2011-08-17');
 
-INSERT INTO type_formation VALUES (1, 'Web designer');
-INSERT INTO type_formation VALUES (2, 'Développeur');
+INSERT INTO `STAGIAIRE_FORMATEUR` (`ID`, `ID_FORMATEUR`, `DATE_DEBUT`, `DATE_FIN`) VALUES
+(1,	1, '2011-07-25', '2011-10-28'),
+(1,	2, '2011-10-31', '2011-12-30'),
+(2,	4, '2011-08-26', '2011-10-18'),
+(8,	2, '2011-08-15', '2012-02-15'),
+(6,	4, '2011-08-21', '2011-10-21'),
+(4,	3, '2011-08-17', '2012-02-21');
 
-SELECT * FROM formateur;
-SELECT * FROM nationalite;
-SELECT * FROM salle;
-SELECT * FROM stagiaire;
-SELECT * FROM stagiaire_formateur;
-SELECT * FROM fype_formation_formateur;
-SELECT * FROM fype_formation; 
+INSERT INTO TYPE_FORMATION_FORMATEUR (ID_FORMATEUR, ID_TYPE_FORMATION, DATE_DEBUT_FORMATION, DATE_FIN_FORMATION) VALUES
+(1,	1, '2011-07-25', '2011-12-28'),
+(2,	1, '2011-09-25', '2012-01-25'),
+(3,	2, '2010-08-21', '2013-10-21'),
+(4,	2, '2011-08-17', '2012-02-21');
