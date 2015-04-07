@@ -11,18 +11,13 @@
 			<a > <h1> Modification d'un Stagiaire </h1> </a>
 		</div>
 		
-		<h1><?php include('affichage-stagiaires.php'); ?></h1>
+		<div class="affichage">
+			<?php include('affichage-stagiaires.php'); ?>		
+		</div>
 				
     	<form method="post" action="traitement-modification.php" class="formulaire-choix">
 	    	<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
 	      
-	      	<p>
-				Type de la formation : 
-				<select name="formation">
-						<option selected="selected" value="1"> Web designer</option>
-						<option value="2"> Développpeur</option>
-			    </select>  
-	      	</p>
 	      
 	      	<p>
 				<input type="reset" value="Effacer" />
