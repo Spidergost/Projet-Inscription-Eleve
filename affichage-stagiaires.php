@@ -22,7 +22,8 @@
 		        		LEFT JOIN TYPE_FORMATION 
 		        		ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
 		        		LEFT JOIN NATIONALITE 
-		        		ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE');
+		        		ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE
+		        		ORDER BY ID');
 
 		        //En cas de reussite
 				$nbStagiaire=$requeteAffichage->rowCount();

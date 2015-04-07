@@ -16,7 +16,7 @@
             echo "Connexion à la base réussi. <br/>";
             
             // On calcul l'Id à mettre au nouveau stagiaire (l'id max précédent + 1)
-            $requeteId = $db->query('SELECT MAX(Id) as IdMAX FROM stagiaire');
+            $requeteId = $db->query('SELECT MAX(ID) as IdMAX FROM STAGIAIRE');
             $valeurId = $requeteId->fetch();
             $id = $valeurId['IdMAX'];
             echo "La variable \$id vaut : " . $id . "<br />";
@@ -24,7 +24,7 @@
             echo "Elle vaut maintenant : " . $id . "<br />";
 
             // Requête SQL préparé
-            $requeteInsertion = $db->prepare('INSERT INTO stagiaire (Id, Nom, Prenom, Id_nationalite, Id_type_formation) 
+            $requeteInsertion = $db->prepare('INSERT INTO STAGIAIRE (ID, NOM, PRENOM, ID_NATIONALITE, ID_TYPE_FORMATION) 
                 VALUES (:id, :nom, :prenom, :nationalite, :formation)');
 
             // On remplie les paramètres
