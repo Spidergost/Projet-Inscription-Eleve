@@ -17,12 +17,12 @@
 		        $db->exec("SET CHARACTER SET utf8");
 		        echo "<p>Connexion à la base réussi.</p> <br/>";
 
-		        $requeteAffichage = $db->query('SELECT Id, Nom, Prenom, type_formation.Libelle AS Formation, nationalite.Libelle AS Nationalite 
-		        		FROM stagiaire 
-		        		LEFT JOIN type_formation 
-		        		ON stagiaire.Id_type_formation = type_formation.Id_type_formation 
-		        		LEFT JOIN nationalite 
-		        		ON stagiaire.Id_nationalite = nationalite.Id_nationalite');
+		        $requeteAffichage = $db->query('SELECT ID, NOM, PRENOM, TYPE_FORMATION.LIBELLE AS Formation, NATIONALITE.LIBELLE AS Nationalite 
+		        		FROM STAGIAIRE 
+		        		LEFT JOIN TYPE_FORMATION 
+		        		ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
+		        		LEFT JOIN NATIONALITE 
+		        		ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE');
 
 		        //En cas de reussite
 				$nbStagiaire=$requeteAffichage->rowCount();
