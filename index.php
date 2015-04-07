@@ -47,6 +47,12 @@
 					echo "<script>alert('Insertion de stagiaire réussi !')</script>";
 					echo correction;
 				}
+			}
+			else if (isset($_GET['suppression'])) {
+				if ($_GET['suppression']==1) {
+					echo "<script>alert('Suppression du stagiaire réussi !')</script>";
+					echo correction;
+				}
 			}	
 		?>
 		
