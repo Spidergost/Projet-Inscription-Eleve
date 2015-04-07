@@ -1,0 +1,37 @@
+<?php
+
+    // Enregistrement des variables à partir du formulaire
+    $id = $_POST['id'];
+
+	if ($id!='') {
+
+    	try {
+            // Connexion à la base de données
+            $db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
+            // prise en charge de l'utf-8
+            $db->exec("SET CHARACTER SET utf8");
+            echo "Connexion à la base réussi. <br/>";
+            
+            // Requête SQL préparé
+            $requeteInsertion = $db->prepare('DELETE FROM `STAGIAIRE` WHERE ((`ID` = :id));');
+
+            // On remplie les paramètres
+            $requeteInsertion->bindParam(':id', $id, PDO::PARAM_INT, 2);
+			
+            // On l'éxecute
+            $requeteInsertion->execute();
+            echo "Stagiaire supprimé avec succès !";
+
+            // Redirection
+            header('Location: index.php?suppression=1');
+        }
+        catch (PDOException $e) {
+        	echo "Erreur : " . $e->getMessage() . "<br/>";
+        	die();
+        }
+    }
+    else {
+        header('Location: suppression-stagiaire.php?erreur=1');
+    }
+    
+?>
