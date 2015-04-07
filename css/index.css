@@ -1,88 +1,74 @@
-/*Rien en ce qui concerne couleur, forme n'est définitif */
-
 body {
- font-family: comic sans ms, sans-serif;
- width:900 px;
- min-height:670 px;
- margin-top:auto;
- margin-left:1500 px;
- margin-right:1500 px;
- border:auto;
- }
-div#bandeau {
+	margin-top:5px;
+	margin-left:150px;
+	margin-right:150px;
+	margin-bottom:5px;
+	background: gray;
+	text-align: center;
+}
+.bandeau {
 text-align:center;
 	width:1370 px;
 	height:75 px;
-	font-family: comic sans ms, sans-serif;
+	background: 
+	font-family: Arial, sans-serif;
 	background-color:#E0F8F7;
 	}
 h1 {
- font-size: 250%;
- color:black;
- text-align: center;
- margin-bottom:20px;
- font-family: comic sans ms, sans-serif;
- font-weight:bold;
- text-shadow:5px;
+	border: 1px black solid;
+	background: green;
 }
-
-/*div#menu { Ce bloc permet de créer un menu.
-	float:left;
-	width:100px;
-	height:400px;
-	background-color:#FF6699;
-	}*/
-
 .liens {
-text-align:center;
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:150 px;
- margin-right:150 px;
- font-size:150%;
+	border: 1px black solid;
+	background: gray;
+	height: 300px;
 }
-
 .page_1 {
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:100 px;
-margin-right:100 px;
-font-size:100%;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	font-family: Arial, sans-serif;
+	border: 10px;
+	border: 1px black solid;
+	background: silver;
 }
 .page_2 {
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:100 px;
-margin-right:100 px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	font-family: Arial, sans-serif;
+	border: 1px black solid;
+	background: silver;
 }
 .page_3 {
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:100 px;
-margin-right:100 px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	font-family: Arial, sans-serif;
+	border: 1px black solid;
+	background: silver;
 }
 .page_4 {
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:100 px;
-margin-right:100 px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	font-family: Arial, sans-serif;
+	border: 1px black solid;
+	background: silver;
 }
 .page_5 {
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:100 px;
-margin-right:100 px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	font-family: Arial, sans-serif;
+	border: 1px black solid;
+	background: silver;
 }
 .page_6 {
-border: 1px black solid;
-font-family: comic sans ms, sans-serif;
-margin-top:auto;
-margin-left:100 px;
-margin-right:100 px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	font-family: Arial, sans-serif;
+	border: 1px black solid;
+	background: silver;
 }
