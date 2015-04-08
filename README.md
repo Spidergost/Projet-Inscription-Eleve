@@ -1,9 +1,10 @@
-# Projet-Inscription-Eleve
+## Projet-Inscription-Eleve
 
+### Logiciel nécessaire
 
-Pensez à avoir WAMP ou LAMP d'installé
-Votre compte root de la base de données doit être sans mot de passe.
+- Wamp / Lamp / Xampp
+- Le compte root dans MySQL doit être sans password
 
-Penser à faire un fichier de connexion à la base pour toutes les pages
+### Améliorations possibles
 
-* test
+- Ajouter du JS sur l'affichage
