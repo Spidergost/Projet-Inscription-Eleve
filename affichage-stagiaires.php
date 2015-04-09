@@ -11,7 +11,6 @@
 	<div class="titre">
     	<h1>Liste des stagiaires : </h1>
         </div>
-    	<h1>Liste des stagiaires : </h1>
 
 		<?php
 			try {
