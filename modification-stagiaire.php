@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -29,20 +29,20 @@
 					Type de la formation : 
 					<select name="formation">
 							<option selected="selected" value="1"> Web designer</option>
-							<option value="2"> Développpeur</option>
+							<option value="2"> DÃ©velopppeur</option>
 					</select>  
 				</p>
 				
-				Nationalité : 
+				NationalitÃ© : 
 				<select name="nationalite">
-						<option selected="selected" value="1"> Français</option>
+						<option selected="selected" value="1"> FranÃ§ais</option>
 						<option value="2"> Anglais</option>
 						<option value="3"> Allemand</option>
 						<option value="4"> Russe</option>
 			    </select> 
 				
 				<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
-				<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
+				<p>PrÃ©nom : <br /><input type="text" name="prenom" /> <br /> </p>
 			
 			</div>
 	      
