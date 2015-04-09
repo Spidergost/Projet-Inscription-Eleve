@@ -19,8 +19,6 @@
 	     	</p>
     	</form>
 
-    	<a href="index.php">Retour au menu</a>
-
     	<?php
     		// Lancement script JS de confirmation pour la suppression de stagiaire.
 			if (isset($_GET['erreur'])) {

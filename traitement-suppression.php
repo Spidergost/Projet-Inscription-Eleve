@@ -13,13 +13,13 @@
             echo "Connexion à la base réussi. <br/>";
             
             // Requête SQL préparé
-            $requeteInsertion = $db->prepare('DELETE FROM `STAGIAIRE` WHERE ((`ID` = :id));');
+            $requeteSuppression = $db->prepare('DELETE FROM `STAGIAIRE` WHERE ((`ID` = :id));');
 
             // On remplie les paramètres
-            $requeteInsertion->bindParam(':id', $id, PDO::PARAM_INT, 2);
+            $requeteSuppression->bindParam(':id', $id, PDO::PARAM_INT, 2);
 			
             // On l'éxecute
-            $requeteInsertion->execute();
+            $requeteSuppression->execute();
             echo "Stagiaire supprimé avec succès !";
 
             // Redirection
