@@ -17,9 +17,13 @@
 		
 			<div class="formulaire-modification" >
 			
-				<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
-			
-				<p>Choix des modifications: <br /> </p>
+				<div class="choix-id" >
+					<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
+				</div>
+				
+				<div class="modification-stagiaire" >
+					<p>Choix des modifications: <br /> </p>
+				</div>
 				
 					Type de la formation : 
 					<select name="formation">

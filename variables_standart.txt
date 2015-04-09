@@ -1,8 +1,88 @@
 Toute les variables devront être explicites. Si elle touche à une colonne d'une table de BDD, elle aura le nom de la colonne en question. Chaques variables 
-et noms des blocs devront être renseignné dans ce fichier avec en option (mais conseillé) un commentaire décrivant l'utilisation des variables définis.
+et noms des blocs devront être renseignné dans ce fichier avec en option (mais conseillé) un commentaire décrivant l'utilisation des variables définis. Si une 
+colonne existe sous un même nom dans une autre table, on precisera sous cette forme le nom de la variable: "colonne-table".
 
+Liste des variables rapportant à la base de données:
+{
+	Table date
+	{
+		Nom des colonnes:
+		{
+			DATE_DEBUT_FORMATION
+		}
+	}
+	
+	Table formateur
+	{
+		Nom des colonnes:
+		{
+			ID_FORMATEUR;
+			ID_SALLE;
+			NOM;
+			PRENOM;
+		}
+	}
+	
+	Table nationalite
+	{
+		Nom des colonnes:
+		{
+			ID_NATIONALITE;
+			LIBELLE;
+		}
+	}
+	
+	Table salle
+	{
+		Nom des colonnes:
+		{
+			ID_SALLE;
+			LIBELLE;
+		}
+	}
+	
+	Table stagiaire
+	{
+		Nom des colonnes:
+		{
+			ID;
+			ID_TYPE_FORMATION;
+			ID_NATIONALITE;
+			NOM;
+			PRENOM;
+		}
+	}
+	
+	Table stagiaire_formateur
+	{
+		Nom des colonnes:
+		{
+			ID;
+			ID_FORMATEUR;
+			DATE_DEBUT;
+			DATE_FIN;
+		}
+	}
+	
+	Table type_formation
+	{
+		Nom des colonnes:
+		{
+			ID_TYPE_FORMATION;
+			LIBELLE;
+		}
+	}
 
-
+	Table type_formation_formateur
+	{
+		Nom des colonnes:
+		{
+			ID_FORMATEUR;
+			ID_TYPE_FORMATION;
+			DATE_DEBUT_FORMATION;
+			DATE_FIN_FORMATION;
+		}
+	}
 Variables et class de index.php
 {
 	class:

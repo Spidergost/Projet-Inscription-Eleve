@@ -2,6 +2,10 @@
 
     // Enregistrement des variables à partir du formulaire
     $id = $_POST['id'];
+	$id_type_formation = $_POST['id_type_formation'];
+	$id_nationalite = $_POST['id_nationalite'];
+	$nom = $_POST['nom'];
+	$prenom = $_POST['prenom'];
 
 	if ($id!='') {
 
