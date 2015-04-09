@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/insertion-stagiaire.css" media="screen" />
+		<!--<link rel="stylesheet" type="text/css" href="css/insertion-stagiaire.css" media="screen" />-->
         <title>Insertion de stagiaire</title>
     </head>
 
