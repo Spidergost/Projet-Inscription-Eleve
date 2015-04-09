@@ -14,15 +14,32 @@
 		<?php include('affichage-stagiaires.php'); ?>
 		</div>	
     	<form method="post" action="traitement-modification.php" class="formulaire-choix">
-	    	<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
-	      
-	      	<p>
-				Type de la formation : 
-				<select name="formation">
-						<option selected="selected" value="1"> Web designer</option>
-						<option value="2"> Développpeur</option>
-			    </select>  
-	      	</p>
+		
+			<div class="formulaire-modification" >
+			
+				<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
+			
+				<p>Choix des modifications: <br /> </p>
+				
+					Type de la formation : 
+					<select name="formation">
+							<option selected="selected" value="1"> Web designer</option>
+							<option value="2"> Développpeur</option>
+					</select>  
+				</p>
+				
+				Nationalité : 
+				<select name="nationalite">
+						<option selected="selected" value="1"> Français</option>
+						<option value="2"> Anglais</option>
+						<option value="3"> Allemand</option>
+						<option value="4"> Russe</option>
+			    </select> 
+				
+				<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
+				<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
+			
+			</div>
 	      
 	      	<p>
 				<input type="reset" value="Effacer" />
