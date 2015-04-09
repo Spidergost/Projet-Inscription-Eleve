@@ -22,13 +22,17 @@
 
             // On remplie les paramètres
             $requeteModification->bindParam(':id', $id, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':id_type_formation', $id_type_formation, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':id_nationalite', $id_nationalite, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':nom', $nom, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':prenom', $prenom, PDO::PARAM_INT, 2);
 			
             // On l'éxecute
             $requeteModification->execute();
             echo "Stagiaire modifié avec succés avec succès !";
 
             // Redirection
-            header('Location: index.php?suppression=1');
+            header('Location: index.php?modification=1');
         }
         catch (PDOException $e) {
         	echo "Erreur : " . $e->getMessage() . "<br/>";

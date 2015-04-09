@@ -1,0 +1,1 @@
+XCOPY C:\Users\Spidergost\Desktop\Projet-Inscription-Eleve C:\wamp\www\Projet-Inscription-Eleve /D /S
