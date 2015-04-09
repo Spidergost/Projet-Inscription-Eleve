@@ -32,8 +32,10 @@
 				$tabResult=$requeteAffichage->fetchAll(PDO::FETCH_ASSOC);
 				echo "<p>Il y a $nbStagiaire stagiaires(s)</p>";
 				$titres=array_keys($tabResult[0]);
+				 
 				echo "<table border=\"1\"><tr>";
-
+				
+				
 				//Affichage des titres du tableau
 				foreach($titres as $nomcol)
 				{
