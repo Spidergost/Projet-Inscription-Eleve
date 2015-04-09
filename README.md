@@ -12,4 +12,3 @@
 - Contrôle sur les requêtes
 - Les liste déroulantes font appel aux tables
 - Contrôle de saisis
-- 
