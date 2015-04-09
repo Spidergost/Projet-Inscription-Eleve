@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +8,9 @@
     </head>
 
     <body>
-
+	<div class="titre">
+    	<h1>Liste des stagiaires : </h1>
+        </div>
     	<h1>Liste des stagiaires : </h1>
 
 		<?php
@@ -19,13 +21,20 @@
 		        $db->exec("SET CHARACTER SET utf8");
 		        echo "<p>Connexion à la base réussi.</p> <br/>";
 
-		        $requeteAffichage = $db->query('SELECT ID, NOM, PRENOM, TYPE_FORMATION.LIBELLE AS Formation, NATIONALITE.LIBELLE AS Nationalite 
-		        		FROM STAGIAIRE 
-		        		LEFT JOIN TYPE_FORMATION 
-		        		ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
-		        		LEFT JOIN NATIONALITE 
-		        		ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE
-		        		ORDER BY ID');
+		        $requeteAffichage = $db->query('SELECT STAGIAIRE.ID AS id_stagiaire, STAGIAIRE.NOM AS nom_stagiaire, STAGIAIRE.PRENOM AS prenom_stagiaire, TYPE_FORMATION.LIBELLE AS formation, NATIONALITE.LIBELLE AS nationalite, FORMATEUR.NOM AS nom_formateur, FORMATEUR.PRENOM AS prenom_formateur, SALLE.LIBELLE AS salle, STAGIAIRE_FORMATEUR.DATE_DEBUT AS debut_formation,STAGIAIRE_FORMATEUR.DATE_FIN AS fin_formation
+												FROM STAGIAIRE 
+												LEFT JOIN TYPE_FORMATION 
+												ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
+												LEFT JOIN NATIONALITE 
+												ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE
+												LEFT JOIN STAGIAIRE_FORMATEUR
+												ON STAGIAIRE.ID = STAGIAIRE_FORMATEUR.ID
+												LEFT JOIN FORMATEUR
+												ON STAGIAIRE_FORMATEUR.ID_FORMATEUR = FORMATEUR.ID_FORMATEUR
+												LEFT JOIN SALLE
+												ON FORMATEUR.ID_SALLE = SALLE.ID_SALLE
+												ORDER BY STAGIAIRE.ID;');
+						
 
 		        //En cas de reussite
 				$nbStagiaire=$requeteAffichage->rowCount();
