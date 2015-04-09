@@ -7,6 +7,7 @@
     </head>
 
     <body>
+	
 		<div class="titre">
 			<a > <h1> Modification d'un Stagiaire </h1> </a>
 		</div>

@@ -11,9 +11,11 @@
     	<h1> Insérer un stagiaire en formation </h1>
 
     	<form method="post" action="traitement-insertion.php" class="formulaire">
+		
 	    	<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
 		  	<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
 	      	<p>
+			
 				Nationalité : 
 				<select name="nationalite">
 						<option selected="selected" value="1"> Français</option>
