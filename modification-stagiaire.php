@@ -19,7 +19,7 @@
 			<div class="formulaire-modification" >
 			
 				<div class="choix-id" >
-					<p>Choix du stagiaire par ID: <br /><input type="text" name="choix-id" /> <br /> </p>
+					<p>Choix du stagiaire par ID: <br /><input type="text" name="id" /> <br /> </p>
 				</div>
 				
 				<div class="modification-stagiaire" >
@@ -27,14 +27,14 @@
 				</div>
 				
 					Type de la formation : 
-					<select name="formation">
+					<select name="id_type_formation">
 							<option selected="selected" value="1"> Web designer</option>
 							<option value="2"> Développpeur</option>
 					</select>  
 				</p>
 				
 				Nationalité : 
-				<select name="nationalite">
+				<select name="id_nationalite">
 						<option selected="selected" value="1"> Français</option>
 						<option value="2"> Anglais</option>
 						<option value="3"> Allemand</option>
