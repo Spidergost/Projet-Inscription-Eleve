@@ -15,7 +15,7 @@
     	<form method="post" action="traitement-suppression.php" class="formulaire">
 			<p>ID :	<input type="text" name="id" /> <br /> </p>
 	    	<p>
-				<input type="submit" value="Supprimer" />
+				<input type="submit" value="Supprimer le stagiaire" />
 	     	</p>
     	</form>
 

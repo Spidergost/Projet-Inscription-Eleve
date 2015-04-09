@@ -34,8 +34,7 @@
 	      	</p>
 	      
 	      	<p>
-				<input type="reset" value="Effacer" />
-				<input type="submit" value="Envoyer" />
+				<input type="submit" value="Valider" />
 	     	</p>
     	</form>
 
