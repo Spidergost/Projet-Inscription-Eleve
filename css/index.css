@@ -16,6 +16,7 @@ body {
 	border: 1px black solid;
 	background: #DEE9E8; /* remplace la couleur gris foncé */
 	height: auto;
+    border:0; /* enlève l'espèce de bordure */
 }
 .page_1 {
 	margin-top:5px;
