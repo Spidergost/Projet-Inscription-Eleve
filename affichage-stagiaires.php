@@ -19,7 +19,8 @@
 		        // prise en charge de l'utf-8
 		        $db->exec("SET CHARACTER SET utf8");
 		        echo "<p>Connexion à la base réussi.</p> <br/>";
-
+				
+				$requeteCompte = $db->query('SELECT ID FROM STAGIAIRE;');
 		        $requeteAffichage = $db->query('SELECT STAGIAIRE.ID AS id_stagiaire, STAGIAIRE.NOM AS nom_stagiaire, STAGIAIRE.PRENOM AS prenom_stagiaire, TYPE_FORMATION.LIBELLE AS formation, NATIONALITE.LIBELLE AS nationalite, FORMATEUR.NOM AS nom_formateur, FORMATEUR.PRENOM AS prenom_formateur, SALLE.LIBELLE AS salle, STAGIAIRE_FORMATEUR.DATE_DEBUT AS debut_formation,STAGIAIRE_FORMATEUR.DATE_FIN AS fin_formation
 												FROM STAGIAIRE 
 												LEFT JOIN TYPE_FORMATION 
@@ -34,12 +35,13 @@
 												ON FORMATEUR.ID_SALLE = SALLE.ID_SALLE
 												ORDER BY STAGIAIRE.ID;');
 						
-				$requeteCompte = $db->query('SELECT STAGIAIRE.ID FROM STAGIAIRE;');
+				
 				
 		        //En cas de reussite
-				$nbStagiaire=$requeteCompte->rowCount();
+				$nbStagiaireUnique=$requeteCompte->rowCount();
+				$nbStagiaire=$requeteAffichage->rowCount();
 				$tabResult=$requeteAffichage->fetchAll(PDO::FETCH_ASSOC);
-				echo "<p>Il y a $nbStagiaire stagiaire(s)</p>";
+				echo "<p>Il y a $nbStagiaireUnique stagiaire(s)</p>";
 				$titres=array_keys($tabResult[0]);
 				echo "<table border=\"1\"><tr>";
 
