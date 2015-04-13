@@ -8,62 +8,75 @@ body {
 }
 .titre {
 	border: 1px black solid;
-		margin-top:25px5px;
+    margin-top:25px5px;
 	margin-bottom:18px;
 	background-color: #86CDE4;
 }
+
 .liens {
 	border: 1px black solid;
 	background: #DEE9E8; /* remplace la couleur gris foncé */
 	height: auto;
     border:0; /* enlève l'espèce de bordure */
 }
+a{
+color:#303030; /* change la couleur de tous les liens */
+font-family: "Cominc sans ms", Arial, sans-serif;
+}
+a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
 .page_1 {
-	margin-top:5px;
+    /* page original */
+	/*margin-top:5px;
 	margin-left:10px;
 	margin-right:10px;
 	font-family: Arial, sans-serif;
 	border: 10px;
-	border: 1px black solid;
 	background: silver;
+	border: 1px black solid; */
+	background: silver;
+    margin: 15px;
+    padding: 20px;
+    font-size: small;
+    font-family: "Tahoma", Arial, sans-serif;
+    text-align: center;
 }
 .page_2 {
-	margin-top:5px;
-	margin-left:10px;
-	margin-right:10px;
-	font-family: Arial, sans-serif;
-	border: 1px black solid;
 	background: silver;
+    margin: 15px;
+    padding: 20px;
+    font-size: small;
+    font-family: "Tahoma", Arial, sans-serif;
+    text-align: center;
 }
 .page_3 {
-	margin-top:5px;
-	margin-left:10px;
-	margin-right:10px;
-	font-family: Arial, sans-serif;
-	border: 1px black solid;
 	background: silver;
+    margin: 15px;
+    padding: 20px;
+    font-size: small;
+    font-family: "Tahoma", Arial, sans-serif;
+    text-align: center;
 }
 .page_4 {
-	margin-top:5px;
-	margin-left:10px;
-	margin-right:10px;
-	font-family: Arial, sans-serif;
-	border: 1px black solid;
 	background: silver;
+    margin: 15px;
+    padding: 20px;
+    font-size: small;
+    font-family: "Tahoma", Arial, sans-serif;
+    text-align: center;
 }
 .page_5 {
-	margin-top:5px;
-	margin-left:10px;
-	margin-right:10px;
-	font-family: Arial, sans-serif;
-	border: 1px black solid;
 	background: silver;
+    margin: 15px;
+    padding: 20px;
+    font-size: small;
+    font-family: "Tahoma", Arial, sans-serif;
+    text-align: center;
 }
 .page_6 {
-	margin-top:5px;
-	margin-left:10px;
-	margin-right:10px;
-	font-family: Arial, sans-serif;
-	border: 1px black solid;
 	background: silver;
+    margin: 15px;
+    padding: 20px;
+    font-size: small;
+    font-family: "Tahoma", Arial, sans-serif;
+    text-align: center;
 }

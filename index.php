@@ -7,37 +7,37 @@
     </head>
 
     <body>
-	
+
 		<div class="titre">
 			<a > <h1> Accueil </h1> </a>
 		</div>
-		
+
 		<div class="liens">
-			
-			<div class="page_1">
-				<a href="insertion-stagiaire.php"> Insérer un stagiaire </a>
+
+			<div class="page_1" >
+				<a href="insertion-stagiaire.php" style="display:block;"> Insérer un stagiaire </a>
 			</div>
-            
+
 			<div class="page_2">
-				<a href="affichage-stagiaires.php"> Afficher les stagiaires </a>
+				<a href="affichage-stagiaires.php" style="display:block;"> Afficher les stagiaires </a>
 			</div>
 
 			<div class="page_3">
-				<a href="suppression-stagiaire.php"> Supprimer un stagiaire </a>			
+				<a href="suppression-stagiaire.php" style="display:block;"> Supprimer un stagiaire </a>
 			</div>
-			
+
 			<div class="page_4">
-				<a href="modification-stagiaire.php"> Modifier les informations d'un stagiaire </a>			
+				<a href="modification-stagiaire.php" style="display:block;"> Modifier les informations d'un stagiaire </a>
 			</div>
-			
+
 			<div class="page_5">
-				<a href="listing.php"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </a>			
+				<a href="listing.php" style="display:block;"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </a>
 			</div>
-			
+
 			<div class="page_6">
-				<a href="insertion-stagiaire.php"> Page 6 </a>			
+				<a href="insertion-stagiaire.php" style="display:block;"> Page 6 </a>
 			</div>
-			
+
 		</div>
 
 		<?php
@@ -51,8 +51,8 @@
 				if ($_GET['suppression']==1) {
 					echo "<script>alert('Suppression du stagiaire réussi !')</script>";
 				}
-			}	
+			}
 		?>
-		
+
     </body>
 </html>
