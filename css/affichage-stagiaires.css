@@ -11,11 +11,15 @@ body {
 	margin-top:25px5px;
 	margin-bottom:18px;
 	background-color: #86CDE4;
+	color:#303030;
+	border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
 .styletableau{
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
+	background:#86CDE4;
 }
 
 table{
