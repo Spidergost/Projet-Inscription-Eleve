@@ -48,6 +48,5 @@
     }
     else {
         header('Location: insertion-stagiaire.php?erreur=1');
-    }
-    
+    }    
 ?>

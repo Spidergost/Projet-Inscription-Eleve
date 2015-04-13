@@ -12,34 +12,83 @@
     		<h1> Insérer un stagiaire en formation </h1>
     	</div>
 
+    	<?php
+			// Connection a la base
+			try {
+				// Connexion à la base de données
+				$db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
+				// prise en charge de l'utf-8
+				$db->exec("SET CHARACTER SET utf8");
+				echo "Connexion à la base réussi. <br/>";
+			}
+			catch (PDOException $e) {
+				echo "Erreur : " . $e->getMessage() . "<br/>";
+				die();
+			}
+		?>
+
     	<form method="post" action="traitement-insertion.php" class="formulaire">
 		
-	    	<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
+	    	<p>Nom : <br /><input type="text" name="nom" /> <br /> </p>
 		  	<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
-	      	<p>
-			
-				Nationalité : 
-				<select name="nationalite">
-						<option selected="selected" value="1"> Français</option>
-						<option value="2"> Anglais</option>
-						<option value="3"> Allemand</option>
-						<option value="4"> Russe</option>
-			    </select>  
-	      	</p>
+	      	
+	      	<?php
+		        // NATIONALITE
+		    	// Requête pour avoir le nombre de nationalite
+		    	$requeteNbNationalite = $db->query('SELECT COUNT(ID_NATIONALITE) FROM NATIONALITE');
+		        $valeurNbNationalite = $requeteNbNationalite->fetch();
+		        $nbNationalite = $valeurNbNationalite['COUNT(ID_NATIONALITE)'];
+		        echo "<p>$nbNationalite nationalité(s) : ";
+
+		        // Affichage des nationalites
+		        echo "<select name=\"nationalite\">";
+		        for ($i=1; $i < ($nbNationalite+1) ; $i++) { 
+		        	// Requête SQL préparé
+		        	$requeteNationalite = $db->prepare('SELECT * FROM NATIONALITE WHERE ID_NATIONALITE=:id');
+		        	// On remplie les paramètres
+		            $requeteNationalite->bindParam(':id', $i, PDO::PARAM_INT, 2);
+		            // On l'éxécute
+		            $requeteNationalite->execute();
+		            // On fetch Rigght !
+		        	$valeurNationalite = $requeteNationalite->fetch();
+		        	$idNationalite = $valeurNationalite['ID_NATIONALITE'];
+		        	$libelleNationalite = $valeurNationalite['LIBELLE'];
+		        	echo "<option value=\"$idNationalite\"> $libelleNationalite</option>";
+		        }
+		        echo "</select> </p>";
+    		?>
+	      	
+    		<?php
+		        // FORMATION
+		    	// Requête pour avoir le nombre de formation
+		    	$requeteNbFormation = $db->query('SELECT COUNT(ID_TYPE_FORMATION) FROM TYPE_FORMATION');
+		        $valeurNbFormation = $requeteNbFormation->fetch();
+		        $nbFormation = $valeurNbFormation['COUNT(ID_TYPE_FORMATION)'];
+		        echo "<p> $nbFormation formation(s) : ";
+
+		        // Affichage des formations
+		        echo "<select name=\"formation\">";
+		        for ($i=1; $i < ($nbFormation+1) ; $i++) { 
+		        	// Requête SQL préparé
+		        	$requeteFormation = $db->prepare('SELECT * FROM TYPE_FORMATION WHERE ID_TYPE_FORMATION=:id');
+		        	// On remplie les paramètres
+		            $requeteFormation->bindParam(':id', $i, PDO::PARAM_INT, 2);
+		            // On l'éxécute
+		            $requeteFormation->execute();
+		            // On fetch Rigght !
+		        	$valeurFormation = $requeteFormation->fetch();
+		        	$idFormation = $valeurFormation['ID_TYPE_FORMATION'];
+		        	$libelleFormation = $valeurFormation['LIBELLE'];
+		        	echo "<option value=\"$idFormation\"> $libelleFormation</option>";
+		        }
+		        echo "</select> </p>";
+    		?>
 	      
 	      	<p>
-				Type de la formation : 
-				<select name="formation">
-						<option selected="selected" value="1"> Web designer</option>
-						<option value="2"> Développpeur</option>
-			    </select>  
-	      	</p>
-	      
-	      	<p>
-				<input type="submit" value="Valider" />
+				<input type="submit" value="Valider l'insertion" />
 	     	</p>
     	</form>
-
+    	
     	<a href="index.php">Retour au menu</a>
 
     	<?php
