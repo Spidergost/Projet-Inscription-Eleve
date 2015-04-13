@@ -34,11 +34,12 @@
 												ON FORMATEUR.ID_SALLE = SALLE.ID_SALLE
 												ORDER BY STAGIAIRE.ID;');
 						
-
+				$requeteCompte = $db->query('SELECT STAGIAIRE.ID FROM STAGIAIRE;');
+				
 		        //En cas de reussite
-				$nbStagiaire=$requeteAffichage->rowCount();
+				$nbStagiaire=$requeteCompte->rowCount();
 				$tabResult=$requeteAffichage->fetchAll(PDO::FETCH_ASSOC);
-				echo "<p>Il y a $nbStagiaire stagiaires(s)</p>";
+				echo "<p>Il y a $nbStagiaire stagiaire(s)</p>";
 				$titres=array_keys($tabResult[0]);
 				echo "<table border=\"1\"><tr>";
 
