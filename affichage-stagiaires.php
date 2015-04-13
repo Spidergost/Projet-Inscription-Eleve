@@ -34,9 +34,7 @@
 												LEFT JOIN SALLE
 												ON FORMATEUR.ID_SALLE = SALLE.ID_SALLE
 												ORDER BY STAGIAIRE.ID;');
-						
-				
-				
+		        
 		        //En cas de reussite
 				$nbStagiaireUnique=$requeteCompte->rowCount();
 				$nbStagiaire=$requeteAffichage->rowCount();
@@ -72,5 +70,6 @@
 		?>
 
 		<a href="index.php">Retour au menu</a>
+
 	</body>
 </html>
