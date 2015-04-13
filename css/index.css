@@ -25,7 +25,7 @@ a{
 color:#303030; /* change la couleur de tous les liens */
 font-family: "Cominc sans ms", Arial, sans-serif;
 }
-a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
+.page_1:hover{background-color:#86CDE4} /* couleur quand on passe sur les liens. */
 .page_1 {
     /* page original */
 	/*margin-top:5px;
@@ -41,7 +41,10 @@ a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
     font-size: small;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
+    border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
+.page_2:hover{background-color:#86CDE4}
 .page_2 {
 	background: silver;
     margin: 15px;
@@ -49,7 +52,10 @@ a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
     font-size: small;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
+    border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
+.page_3:hover{background-color:#86CDE4}
 .page_3 {
 	background: silver;
     margin: 15px;
@@ -57,7 +63,10 @@ a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
     font-size: small;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
+    border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
+.page_4:hover{background-color:#86CDE4}
 .page_4 {
 	background: silver;
     margin: 15px;
@@ -65,7 +74,10 @@ a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
     font-size: small;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
+    border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
+.page_5:hover{background-color:#86CDE4}
 .page_5 {
 	background: silver;
     margin: 15px;
@@ -73,7 +85,10 @@ a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
     font-size: small;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
+    border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
+.page_6:hover{background-color:#86CDE4}
 .page_6 {
 	background: silver;
     margin: 15px;
@@ -81,4 +96,6 @@ a:hover{color:#79F8F8} /* couleur quand on passe sur les liens. */
     font-size: small;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
+    border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
 }
