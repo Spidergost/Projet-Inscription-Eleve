@@ -49,9 +49,9 @@
 						foreach ($tabResult[$i] as $valeur)
 						{
 							$stagiaireCB= "CB";
-							$stagiaireCB .= $i+1;
+							$stagiaireCB .= $i;
 							echo "<td> $valeur </td>";
-							echo "<td> <input type='checkbox' name='$stagiaireCB[]' value='$id+1'>";
+							echo "<td> <input type='checkbox' name='$stagiaireCB[]' value='$i'>";
 						}
 						echo "</tr>";
 					}
