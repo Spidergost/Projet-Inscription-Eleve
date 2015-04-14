@@ -42,7 +42,7 @@
 
 				//Affichage des lignes de données
 				
-				<form action="traitement-suppression.php" class="formulaire">
+				echo "<form action= 'traitement-suppression.php'>";
 					for ($i=0; $i<$nbStagiaire; $i++)
 					{
 						echo "<tr>";
@@ -51,13 +51,14 @@
 							$stagiaireCB= "CB";
 							$stagiaireCB .= $i;
 							echo "<td> $valeur </td>";
-							echo "<td> <input type='checkbox' name='$stagiaireCB[]' value='$i'>";
+							
 						}
+						echo "<td> <input type='checkbox' name='$stagiaireCB' value='$i'>";
 						echo "</tr>";
 					}
 				
+				echo "</form>";
 				echo "</table class='styletableau' border=\"1\"> <br />";
-				</form>
 		    }
 		    catch (PDOException $e) {
 		    	echo "Erreur : " . $e->getMessage() . "<br/>";
