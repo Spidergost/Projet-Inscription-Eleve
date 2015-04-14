@@ -25,13 +25,15 @@ a{
 color:#303030; /* change la couleur de tous les liens */
 font-family: "Cominc sans ms", Arial, sans-serif;
 font-size: 16px;
+display: block;
+margin: 15px;
 }
 .page_1:hover{background-color:#86CDE4} /* couleur quand on passe sur les liens. */
 .page_1 {
     /* page original */
 	/*margin-top:5px;
 	margin-left:10px;
-	margin-right:10px;
+	margin-ght:10px;
 	font-family: Arial, sans-serif;
 	border: 10px;
 	background: silver;
@@ -39,11 +41,12 @@ font-size: 16px;
 	background: silver;
     margin: 15px;
     padding: 20px;
-    font-size: small;
+    font-size: 14px;
     font-family: "Tahoma", Arial, sans-serif;
     text-align: center;
     border-radius:10px;
 	box-shadow: 3px 3px 0px #aaa;
+
 }
 .page_2:hover{background-color:#86CDE4}
 .page_2 {

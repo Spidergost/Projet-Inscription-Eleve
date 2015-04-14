@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/indexV2.css" media="screen" />
         <title>Accueil</title>
     </head>
 
@@ -14,30 +14,36 @@
 
 		<div class="liens">
 
-			<div class="page_1" >
-				<a href="insertion-stagiaire.php" style="display:block;"> Insérer un stagiaire </a>
+            <a href="insertion-stagiaire.php" >
+			<div class="page" >
+				<span style="display:block;"> Insérer un stagiaire </span>
 			</div>
-
-			<div class="page_2">
-				<a href="affichage-stagiaires.php" style="display:block;"> Afficher les stagiaires </a>
+			</a>
+            <a href="affichage-stagiaires.php" >
+			<div class="page">
+				 <span style="display:block;">Afficher les stagiaires</span>
 			</div>
-
-			<div class="page_3">
-				<a href="suppression-stagiaire.php" style="display:block;"> Supprimer un stagiaire </a>
+            </a>
+            <a href="suppression-stagiaire.php">
+			<div class="page">
+				<span style="display:block;"> Supprimer un stagiaire </span>
 			</div>
-
-			<div class="page_4">
-				<a href="modification-stagiaire.php" style="display:block;"> Modifier les informations d'un stagiaire </a>
+            </a>
+            <a href="modification-stagiaire.php">
+			<div class="page">
+				<span style="display:block;"> Modifier les informations d'un stagiaire </span>
 			</div>
-
-			<div class="page_5">
-				<a href="listing.php" style="display:block;"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </a>
+            </a>
+            <a href="listing.php" >
+			<div class="page">
+				<span style="display:block;"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </span>
 			</div>
-
-			<div class="page_6">
-				<a href="insertion-stagiaire.php" style="display:block;"> Page 6 </a>
+            </a>
+            <a href="insertion-stagiaire.php" >
+			<div class="page">
+				<span style="display:block;"> Page 6 </span>
 			</div>
-
+            </a>
 		</div>
 
 		<?php
