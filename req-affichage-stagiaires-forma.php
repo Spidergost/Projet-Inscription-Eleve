@@ -10,7 +10,13 @@
 		        $requeteAffichage = $db->query('SELECT STAGIAIRE.ID AS "Id Stagiaire",
 												STAGIAIRE.NOM AS "Nom Stagiaire",
 												STAGIAIRE.PRENOM AS "Prenom Stagiaire",
-												NATIONALITE.LIBELLE AS "Nationalite"
+												TYPE_FORMATION.LIBELLE AS "Formation",
+												NATIONALITE.LIBELLE AS "Nationalite",
+												FORMATEUR.NOM AS "Nom Formateur",
+												FORMATEUR.PRENOM AS "Prenom Formateur",
+												SALLE.LIBELLE AS "Salle",
+												STAGIAIRE_FORMATEUR.DATE_DEBUT AS "Debut Formation",
+												STAGIAIRE_FORMATEUR.DATE_FIN AS "Fin Formation"
 												FROM STAGIAIRE 
 												LEFT JOIN TYPE_FORMATION 
 												ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
