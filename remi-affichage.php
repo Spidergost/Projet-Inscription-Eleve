@@ -1,4 +1,18 @@
-﻿<?php
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/affichage-stagiaires.css" media="screen" />
+        <title>Liste des stagiaires v2</title>
+    </head>
+
+    <body>
+		
+    	<div class="titre">
+    		<h1>Liste des stagiaires v2</h1>
+    	</div>
+
+    	<?php
 			try {
 		        // Connexion à la base de données
 		        $db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
@@ -134,3 +148,8 @@
 		</table> 
 
 		<br /> <?php echo "L'IdMAX vaut : $IdMAX</p>"; ?>
+
+		<a href="index.php">Retour au menu</a>
+
+    </body>
+</html>
