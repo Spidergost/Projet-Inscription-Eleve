@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -7,7 +7,7 @@
     </head>
 
     <body>
-		
+
     	<div class="titre">
     		<h1>Suppression des stagiaires v2</h1>
     	</div>
@@ -18,7 +18,7 @@
 		        $db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
 		        // prise en charge de l'utf-8
 		        $db->exec("SET CHARACTER SET utf8");
-		        echo "<p>Connexion à la base réussi.</p> <br/>";
+		        //echo "<p>Connexion à la base réussi.</p> <br/>";
 		    }
 		    catch (PDOException $e) {
 		    	echo "Erreur : " . $e->getMessage() . "<br/>";
@@ -29,8 +29,8 @@
 		<form method="post" action="traitement-suppression.php" class="formulaire">
 
 		<!--Tableau-->
-		<table BORDER="1"> 
-			
+		<table BORDER="1">
+
 			<!--
 				ligne <tr>
 				titre <th>
@@ -38,7 +38,7 @@
 			-->
 
 			<tr><th>ID</th><th>NOM</th><th>PRENOM</th><th>FORMATION</th><th>NATIONALITE</th></tr>
-			
+
 			<?php
 				/**************************************************************
 					Principe de l'algorithme d'affichage :
@@ -52,14 +52,17 @@
 										on incrémente l'ID
 							- Si non on passe un l'ID suivant
 				***************************************************************/
-			?>	
+			?>
 
-			<?php	
+			<?php
+			echo "<html><head><link rel='stylesheet' type='text/css' href='css/suppression-stagiaires.css' /><head><body>";
 				//  1) Requête pour avoir le nombre de stagiaire(s)
+				echo"<div class='affistag'>";
 				$requeteNbStagiaire = $db->query('SELECT COUNT(ID) FROM STAGIAIRE');
 			    $valeurNbStagiaire = $requeteNbStagiaire->fetch();
 			    $nbStagiaire = $valeurNbStagiaire['COUNT(ID)'];
 			    echo "<p> $nbStagiaire stagiaire(s) : ";
+                echo" </div> ";
 			?>
 
 			<?php
@@ -70,10 +73,14 @@
 			?>
 
 			<?php
+
 				// Do While
+                echo "<html><head><link rel='stylesheet' type='text/css' href='css/suppression-stagiaires.css' /><head><body>";
+                echo"<div class='tableau'>";
 				$id = 1;
 				do {
 					// requête pour tester l'existance de l'id stagiaire
+
 						// Requête SQL préparé
 						$requeteTestStagiaire = $db->prepare('SELECT ID FROM STAGIAIRE WHERE ID = :id');
 						// On remplie les paramètres
@@ -84,13 +91,13 @@
             			$TestStagiaire = $requeteTestStagiaire->rowCount();
             		// Si le stagiaire existe, on affiche ses données
             		if ($TestStagiaire == 1) {
-            			
+
             			// Requête SQL préparé
             			$requeteAffichage = $db->prepare('SELECT STAGIAIRE.ID, STAGIAIRE.NOM, STAGIAIRE.PRENOM, TYPE_FORMATION.LIBELLE AS \'FORMATION\', NATIONALITE.LIBELLE AS \'NATIONALITE\'
             				FROM STAGIAIRE
-            				LEFT JOIN TYPE_FORMATION 
+            				LEFT JOIN TYPE_FORMATION
 							ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
-							LEFT JOIN NATIONALITE 
+							LEFT JOIN NATIONALITE
 							ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE
 							WHERE ID = :id');
             			// On remplie les paramètres
@@ -104,22 +111,28 @@
 		        		$nomStagiaire = $valeurAffichage['PRENOM'];
 		        		$formationStagiaire = $valeurAffichage['FORMATION'];
 		        		$nationaliteStagiaire = $valeurAffichage['NATIONALITE'];
+
 		        		// Affichage dans le tableau
+
 		        		echo "<tr> <td>$id</td> <td>$prenomStagiaire</td> <td>$nomStagiaire</td> <td>$formationStagiaire</td> <td>$nationaliteStagiaire</td> <td><INPUT type=radio name=\"id\" value=\"$id\"></td></tr>";
+
             		}
 					// On incrémente l'id
+
             		$id++;
+            		echo" </div> ";
 				} while ($id < ($IdMAX+1));
+
 			?>
- 
-		</table> 
+
+		</table>
 
 		<!-- Bouton envoie formulaire -->
 		<br /> <input type="submit" value="Valider la suppression" /> <br />
 	</form>
 
 		<br /> <?php echo "L'IdMAX vaut : $IdMAX</p>"; ?>
-		
+
 		</br>
 		<a href="index.php">Retour au menu</a>
 
