@@ -5,6 +5,7 @@ body {
 	margin-bottom:5px;
 	background: #DEE9E8; /* Remplacement du gris foncé*/
 	text-align: center;
+
 }
 .titre {
 	border: 1px black solid;
@@ -20,8 +21,20 @@ body {
 	margin-right:auto;
 	text-align: center;
 	background:#86CDE4;
+	}
+
+.affistag{
+    font-weight: bold;
+	text-align: center;
+	font-size: 16px;
 }
 
-table{
-	margin: 10px auto auto auto;
+
+.tableau {
+    background-color: #86CDE4;
+	color:#303030;
+	border-radius:10px;
+	box-shadow: 3px 3px 0px #aaa;
+	height: 185px;
+	width: 1032px;
 }
