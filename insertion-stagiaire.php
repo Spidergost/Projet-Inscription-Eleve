@@ -39,7 +39,7 @@
 		        $valeurNbNationalite = $requeteNbNationalite->fetch();
 		        $nbNationalite = $valeurNbNationalite['COUNT(ID_NATIONALITE)'];
 		        echo "<p>$nbNationalite nationalité(s) : ";
-
+				
 		        // Affichage des nationalites
 		        echo "<select name=\"nationalite\">";
 		        for ($i=1; $i < ($nbNationalite+1) ; $i++) { 
@@ -57,6 +57,8 @@
 		        }
 		        echo "</select> </p>";
     		?>
+			
+			<a href="ajout-nationalite.php"> Ajouter une nationalité </a>
 	      	
     		<?php
 		        // FORMATION
@@ -91,6 +93,15 @@
     	
     	<a href="index.php">Retour au menu</a>
 
+		<?php
+    		// Lancement script JS de confirmation pour l'insertion de stagiaire.
+			if (isset($_GET['insertion'])) {
+				if ($_GET['insertion']==1) {
+					echo "<script>alert('Nationalité ajoutée avec succès !')</script>";
+				}
+			}	
+		?>
+		
     	<?php
     		// Lancement script JS de confirmation pour l'insertion de stagiaire.
 			if (isset($_GET['erreur'])) {
