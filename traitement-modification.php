@@ -27,9 +27,9 @@
             // On remplie les paramètres
             $requeteModification->bindParam(':id', $id, PDO::PARAM_INT, 2);
 			$requeteModification->bindParam(':id_type_formation', $id_type_formation, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':nom', $nom, PDO::PARAM_STR, 2);
 			$requeteModification->bindParam(':id_nationalite', $id_nationalite, PDO::PARAM_INT, 2);
-			$requeteModification->bindParam(':nom', $nom, PDO::PARAM_INT, 2);
-			$requeteModification->bindParam(':prenom', $prenom, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':prenom', $prenom, PDO::PARAM_STR, 2);
 			
             // On l'éxecute
             $requeteModification->execute();
