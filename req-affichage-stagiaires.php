@@ -7,7 +7,16 @@
 		        //echo "<p>Connexion à la base réussi.</p> <br/>";
 				
 				$requeteCompte = $db->query('SELECT ID FROM STAGIAIRE;');
-		        $requeteAffichage = $db->query('SELECT STAGIAIRE.ID AS id_stagiaire, STAGIAIRE.NOM AS nom_stagiaire, STAGIAIRE.PRENOM AS prenom_stagiaire, TYPE_FORMATION.LIBELLE AS formation, NATIONALITE.LIBELLE AS nationalite, FORMATEUR.NOM AS nom_formateur, FORMATEUR.PRENOM AS prenom_formateur, SALLE.LIBELLE AS salle, STAGIAIRE_FORMATEUR.DATE_DEBUT AS debut_formation,STAGIAIRE_FORMATEUR.DATE_FIN AS fin_formation
+		        $requeteAffichage = $db->query('SELECT STAGIAIRE.ID AS "Id Stagiaire",
+												STAGIAIRE.NOM AS "Nom Stagiaire",
+												STAGIAIRE.PRENOM AS "Prenom Stagiaire",
+												TYPE_FORMATION.LIBELLE AS "Formation",
+												NATIONALITE.LIBELLE AS "Nationalite",
+												FORMATEUR.NOM AS "Nom Formateur",
+												FORMATEUR.PRENOM AS "Prenom Formateur",
+												SALLE.LIBELLE AS "Salle",
+												STAGIAIRE_FORMATEUR.DATE_DEBUT AS "Debut Formation",
+												STAGIAIRE_FORMATEUR.DATE_FIN AS "Fin Formation"
 												FROM STAGIAIRE 
 												LEFT JOIN TYPE_FORMATION 
 												ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
