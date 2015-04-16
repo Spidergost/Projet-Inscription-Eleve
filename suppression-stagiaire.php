@@ -104,7 +104,7 @@
             			$requeteAffichage->bindParam(':id', $id, PDO::PARAM_INT, 2);
             			// On l'éxecute
             			$requeteAffichage->execute();
-            			// On fetch Rigght !
+            			// On fetch Right !
 		        		$valeurAffichage = $requeteAffichage->fetch();
 		        		// Variables
 		        		$prenomStagiaire = $valeurAffichage['NOM'];
