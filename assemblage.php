@@ -51,114 +51,10 @@
 			<input type="hidden" name="envoi" value="yes">			
 			<p>
 				 formateurs par date :<br /><br />
-				<input type="checkbox" name="option[]" value="1"/> Robert Dupond dans la salle 101, 	<?php
-					// DATES
-					// Requête pour avoir le nombre de dates de début
-					$requeteNbDates_debut = $db->query('SELECT COUNT(DATE_DEBUT) FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=1');
-					$valeurNbDates_debut = $requeteNbDates_debut->fetch();
-					$nbDates_debut = $valeurNbDates_debut['COUNT(DATE_DEBUT)'];
-					echo "<p>$nbDates_debut dates début : ";
-
-					// Affichage des dates début
-					
-						// Requête SQL préparé
-						$requeteDates_debut = $db->prepare('SELECT * FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=1');
-						// On remplie les paramètres
-						$requeteDates_debut->bindParam(':id', $i, PDO::PARAM_STR, 20);
-						// On l'éxécute
-						$requeteDates_debut->execute();
-						// On fetch Rigght !
-						$valeurDate_debut = $requeteDates_debut->fetchAll();
-						echo "<select name=\"dates_debut\">";
-						foreach ($valeurDate_debut as $value){
-							
-							$lol = $value['DATE_DEBUT'];
-							echo "<option value=\"1\"> $lol </option>"; echo "<br />";
-							
-						}	
-						echo "</select>";
-				?>  <br />
-				<input type="checkbox" name="option[]" value="2"/> Jean Martin dans la salle 102, <?php
-					// DATES
-					// Requête pour avoir le nombre de dates de début
-					$requeteNbDates_debut = $db->query('SELECT COUNT(DATE_DEBUT) FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=2');
-					$valeurNbDates_debut = $requeteNbDates_debut->fetch();
-					$nbDates_debut = $valeurNbDates_debut['COUNT(DATE_DEBUT)'];
-					echo "<p>$nbDates_debut dates début : ";
-
-					// Affichage des dates début
-					
-						// Requête SQL préparé
-						$requeteDates_debut = $db->prepare('SELECT * FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=2');
-						// On remplie les paramètres
-						$requeteDates_debut->bindParam(':id', $i, PDO::PARAM_STR, 20);
-						// On l'éxécute
-						$requeteDates_debut->execute();
-						// On fetch Rigght !
-						$valeurDate_debut = $requeteDates_debut->fetchAll();
-						echo "<select name=\"dates_debut\">";
-						foreach ($valeurDate_debut as $value){
-							
-							$lol = $value['DATE_DEBUT'];
-							echo "<option value=\"1\"> $lol </option>"; echo "<br />";
-							
-						}	
-						echo "</select>";
-				?>   <br />
-				<input type="checkbox" name="option[]" value="3"/> Paul Durand dans la salle 201, <?php
-					// DATES
-					// Requête pour avoir le nombre de dates de début
-					$requeteNbDates_debut = $db->query('SELECT COUNT(DATE_DEBUT) FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=3');
-					$valeurNbDates_debut = $requeteNbDates_debut->fetch();
-					$nbDates_debut = $valeurNbDates_debut['COUNT(DATE_DEBUT)'];
-					echo "<p>$nbDates_debut dates début : ";
-
-					// Affichage des dates début
-					
-						// Requête SQL préparé
-						$requeteDates_debut = $db->prepare('SELECT * FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=3');
-						// On remplie les paramètres
-						$requeteDates_debut->bindParam(':id', $i, PDO::PARAM_STR, 20);
-						// On l'éxécute
-						$requeteDates_debut->execute();
-						// On fetch Rigght !
-						$valeurDate_debut = $requeteDates_debut->fetchAll();
-						echo "<select name=\"dates_debut\">";
-						foreach ($valeurDate_debut as $value){
-							
-							$lol = $value['DATE_DEBUT'];
-							echo "<option value=\"1\"> $lol </option>"; echo "<br />";
-							
-						}	
-						echo "</select>";
-				?> <br />
-				<input type="checkbox" name="option[]" value="4"/> Alain Duval dans la salle 202, <?php
-					// DATES
-					// Requête pour avoir le nombre de dates de début
-					$requeteNbDates_debut = $db->query('SELECT COUNT(DATE_DEBUT) FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=4');
-					$valeurNbDates_debut = $requeteNbDates_debut->fetch();
-					$nbDates_debut = $valeurNbDates_debut['COUNT(DATE_DEBUT)'];
-					echo "<p>$nbDates_debut dates début : ";
-
-					// Affichage des dates début
-					
-						// Requête SQL préparé
-						$requeteDates_debut = $db->prepare('SELECT * FROM STAGIAIRE_FORMATEUR WHERE ID_FORMATEUR=4');
-						// On remplie les paramètres
-						$requeteDates_debut->bindParam(':id', $i, PDO::PARAM_STR, 20);
-						// On l'éxécute
-						$requeteDates_debut->execute();
-						// On fetch Rigght !
-						$valeurDate_debut = $requeteDates_debut->fetchAll();
-						echo "<select name=\"dates_debut\">";
-						foreach ($valeurDate_debut as $value){
-							
-							$lol = $value['DATE_DEBUT'];
-							echo "<option value=\"1\"> $lol </option>"; echo "<br />";
-							
-						}	
-						echo "</select>";
-				?> 
+				<input type="checkbox" name="option[]" value="1"/> Robert Dupond dans la salle 101,<br />
+				<input type="checkbox" name="option[]" value="2"/> Jean Martin dans la salle 102, <br />
+				<input type="checkbox" name="option[]" value="3"/> Paul Durand dans la salle 201, <br />
+				<input type="checkbox" name="option[]" value="4"/> Alain Duval dans la salle 202, 
 			</p>
 			
 			<p>
@@ -174,7 +70,12 @@
 				if ($_GET['erreur']==1) {
 					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
 				}
-			}	
+			}
+			if (isset($_GET['ajoute'])) {
+				if ($_GET['ajoute']==1) {
+					echo "<script>alert('Stagiaire ajouté avec succés!')</script>";
+				}
+			}			
 		?>
     
     </body>
