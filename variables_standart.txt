@@ -1,8 +1,32 @@
-Toute les variables devront Ítre explicites. Si elle touche ‡ une colonne d'une table de BDD, elle aura le nom de la colonne en question. Chaques variables 
-et noms des blocs devront Ítre renseignnÈ dans ce fichier avec en option (mais conseillÈ) un commentaire dÈcrivant l'utilisation des variables dÈfinis. Si une 
-colonne existe sous un mÍme nom dans une autre table, on precisera sous cette forme le nom de la variable: "colonne-table".
+ÔªøToutes les variables utilis√©es devront imp√©rativement √™tre renseign√©es dans ce fichier.
 
-Liste des variables rapportant ‡ la base de donnÈes:
+Notre convention de nommage sera claire et efficace:
+Lorsqu'on veut disposer d'une variable pour une requ√™te pr√©par√©e ou une variable o√π sera stock√© une valeur venu d'une table de la base de donn√©es, on utilisera
+le nom de la colonne vis√©.
+Exemple:
+
+    $id = $_POST['id'];
+	$id_type_formation = $_POST['id_type_formation'];
+	$id_nationalite = $_POST['id_nationalite'];
+	$nom = $_POST['nom'];																						//Ici on prend pour exemple $nom qui r√©cup√®re la valeur du formulaire de nom "nom"
+	$prenom = $_POST['prenom'];
+
+
+$requeteModification = $db->prepare('UPDATE STAGIAIRE 
+												SET ID_TYPE_FORMATION=:id_type_formation, 
+												ID_NATIONALITE=:id_nationalite, 
+												NOM=:nom, 														//Toujours notre variable $nom
+												PRENOM=:prenom 
+												WHERE ID=:id);
+												
+            $requeteModification->bindParam(':id', $id, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':id_type_formation', $id_type_formation, PDO::PARAM_INT, 2);		
+			$requeteModification->bindParam(':nom', $nom, PDO::PARAM_STR, 2);									//On la retrouve ici dans le binding
+			$requeteModification->bindParam(':id_nationalite', $id_nationalite, PDO::PARAM_INT, 2);
+			$requeteModification->bindParam(':prenom', $prenom, PDO::PARAM_STR, 2);
+
+			
+Liste des variables rapportant √† la base de donn√©es:
 {
 	Table date
 	{
