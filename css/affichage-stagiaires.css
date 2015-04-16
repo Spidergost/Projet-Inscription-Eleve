@@ -24,17 +24,22 @@ body {
 	}
 
 .affistag{
-    font-weight: bold;
-	text-align: center;
-	font-size: 16px;
+    font-weight: bold; /* met le texte en gras */
+	text-align: center; /* aligne le texte */
+	font-size: 16px; /*change la taille */
+	text-decoration:underline; /* souligne le texte */
 }
 
 
 .tableau {
     background-color: #86CDE4;
 	color:#303030;
-	border-radius:10px;
+	/*border-radius:10px; (arrondi les angles).*/
 	box-shadow: 3px 3px 0px #aaa;
-	height: 185px;
-	width: 1032px;
+	height: 375px;
+	width: 1047px;
+	margin: auto;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
 }
