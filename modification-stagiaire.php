@@ -100,9 +100,9 @@
 			            $requeteNationalite->execute();
 			            // On fetch Rigght !
 			        	$valeurNationalite = $requeteNationalite->fetch();
-			        	$idNationalite = $valeurNationalite['ID_NATIONALITE'];
+			        	$id_nationalite = $valeurNationalite['ID_NATIONALITE'];
 			        	$libelleNationalite = $valeurNationalite['LIBELLE'];
-			        	echo "<option value=\"$idNationalite\"> $libelleNationalite</option>";
+			        	echo "<option value=\"$id_nationalite\"> $libelleNationalite</option>";
 			        }
 			        echo "</select> </p>";
     			?>
@@ -126,9 +126,9 @@
 			            $requeteFormation->execute();
 			            // On fetch Rigght !
 			        	$valeurFormation = $requeteFormation->fetch();
-			        	$idFormation = $valeurFormation['ID_TYPE_FORMATION'];
+			        	$id_type_formation = $valeurFormation['ID_TYPE_FORMATION'];
 			        	$libelleFormation = $valeurFormation['LIBELLE'];
-			        	echo "<option value=\"$idFormation\"> $libelleFormation</option>";
+			        	echo "<option value=\"$id_type_formation\"> $libelleFormation</option>";
 			        }
 			        echo "</select> </p>";
 	    		?>

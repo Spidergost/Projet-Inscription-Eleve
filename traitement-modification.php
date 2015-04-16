@@ -17,12 +17,12 @@
             echo "Connexion à la base réussi. <br/>";
             
             // Requête SQL préparé
-            $requeteModification = $db->prepare('UPDATE `STAGIAIRE` 
-												SET ID_TYPE_FORMATION = :id_type_formation, 
-												ID_NATIONALITE = :id_nationalite, 
-												NOM = :nom, 
-												PRENOM = :prenom 
-												WHERE ((`ID` = :id));');
+            $requeteModification = $db->prepare('UPDATE STAGIAIRE 
+												SET ID_TYPE_FORMATION=:id_type_formation, 
+												ID_NATIONALITE=:id_nationalite, 
+												NOM=:nom, 
+												PRENOM=:prenom 
+												WHERE ID=:id');
 
             // On remplie les paramètres
             $requeteModification->bindParam(':id', $id, PDO::PARAM_INT, 2);
@@ -36,7 +36,7 @@
             echo "Stagiaire modifié avec succés avec succès !";
 
             // Redirection
-            header('Location: index.php?modification=1');
+            header('Location: modification-stagiaire.php?modification=1');
         }
         catch (PDOException $e) {
         	echo "Erreur : " . $e->getMessage() . "<br/>";
