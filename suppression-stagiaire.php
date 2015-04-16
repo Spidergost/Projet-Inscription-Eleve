@@ -119,6 +119,8 @@
 	</form>
 
 		<br /> <?php echo "L'IdMAX vaut : $IdMAX</p>"; ?>
+		
+		<br /> <br /><a href="index.php">Retour au menu</a>
 
     </body>
 </html>
