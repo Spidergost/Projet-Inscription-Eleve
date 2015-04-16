@@ -28,21 +28,22 @@
 		?>
 
     	<form method="post" action="traitement-insertion.php" class="formulaire">
-		
+
 	    	<p>Nom : <br /><input type="text" name="nom" /> <br /> </p>
 		  	<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
-	      	
+
 	      	<?php
 		        // NATIONALITE
 		    	// Requête pour avoir le nombre de nationalite
+
 		    	$requeteNbNationalite = $db->query('SELECT COUNT(ID_NATIONALITE) FROM NATIONALITE');
 		        $valeurNbNationalite = $requeteNbNationalite->fetch();
 		        $nbNationalite = $valeurNbNationalite['COUNT(ID_NATIONALITE)'];
 		        echo "<p>$nbNationalite nationalité(s) : ";
-				
+
 		        // Affichage des nationalites
 		        echo "<select name=\"nationalite\">";
-		        for ($i=1; $i < ($nbNationalite+1) ; $i++) { 
+		        for ($i=1; $i < ($nbNationalite+1) ; $i++) {
 		        	// Requête SQL préparé
 		        	$requeteNationalite = $db->prepare('SELECT * FROM NATIONALITE WHERE ID_NATIONALITE=:id');
 		        	// On remplie les paramètres
@@ -57,9 +58,9 @@
 		        }
 		        echo "</select> </p>";
     		?>
-			
-			<a href="ajout-nationalite.php"> Ajouter une nationalité </a>
-	      	
+
+            <font size="2"><a href="ajout-nationalite.php"> Souhaitez-vous ajouter une nationalité ? </a></font>
+
     		<?php
 		        // FORMATION
 		    	// Requête pour avoir le nombre de formation
@@ -70,7 +71,7 @@
 
 		        // Affichage des formations
 		        echo "<select name=\"formation\">";
-		        for ($i=1; $i < ($nbFormation+1) ; $i++) { 
+		        for ($i=1; $i < ($nbFormation+1) ; $i++) {
 		        	// Requête SQL préparé
 		        	$requeteFormation = $db->prepare('SELECT * FROM TYPE_FORMATION WHERE ID_TYPE_FORMATION=:id');
 		        	// On remplie les paramètres
@@ -85,12 +86,12 @@
 		        }
 		        echo "</select> </p>";
     		?>
-	      
+
 	      	<p>
 				<input type="submit" value="Valider l'insertion" />
 	     	</p>
     	</form>
-    	
+
     	<a href="index.php">Retour au menu</a>
 
 		<?php
@@ -99,17 +100,17 @@
 				if ($_GET['insertion']==1) {
 					echo "<script>alert('Nationalité ajoutée avec succès !')</script>";
 				}
-			}	
+			}
 		?>
-		
+
     	<?php
     		// Lancement script JS de confirmation pour l'insertion de stagiaire.
 			if (isset($_GET['erreur'])) {
 				if ($_GET['erreur']==1) {
 					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
 				}
-			}	
+			}
 		?>
-    
+
     </body>
 </html>
