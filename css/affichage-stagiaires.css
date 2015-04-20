@@ -16,12 +16,12 @@ body {
 	border-radius:10px;
 	box-shadow: 3px 3px 0px #aaa;
 }
-.styletableau{
+/*.styletableau{
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
 	background:#86CDE4;
-	}
+	} */
 
 .affistag{
     font-weight: bold; /* met le texte en gras */
@@ -31,15 +31,20 @@ body {
 }
 
 
-.tableau {
+/*.tableau {
     background-color: #86CDE4;
+    width: 50%;
+height: 50%;
 	color:#303030;
-	/*border-radius:10px; (arrondi les angles).*/
+	/*border-radius:10px; (arrondi les angles).
 	box-shadow: 3px 3px 0px #aaa;
-	height: 375px;
-	width: 1047px;
-	margin: auto;
+	height: auto;
+	width: auto;
+	margin: center;
 	text-align: center;
 	margin-left:auto;
 	margin-right:auto;
-}
+    padding: 0;
+    margin : 10px auto auto auto;
+} */
+
