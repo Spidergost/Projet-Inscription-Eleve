@@ -36,3 +36,10 @@ LEFT JOIN TYPE_FORMATION
 ON TYPE_FORMATION_FORMATEUR.ID_TYPE_FORMATION = TYPE_FORMATION_FORMATEUR.ID_TYPE_FORMATION
 ORDER BY TYPE_FORMATION.LIBELLE ;
 ```
+
+
+
+Je m'occupe des corrections CSS pendant que je suis dans la salle U22. SI une page ne doit pas être touché précisait après cette ligne et dans les crochets
+{
+	
+}
