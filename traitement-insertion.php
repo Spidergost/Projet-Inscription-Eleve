@@ -39,7 +39,7 @@
             echo "Stagiaire ajouté avec succès !";
 
             // Redirection
-            header('Location: index.php?insertion=1');
+            header('Location: insertion-stagiaire.php?insertion=1');
         }
         catch (PDOException $e) {
         	echo "Erreur : " . $e->getMessage() . "<br/>";
