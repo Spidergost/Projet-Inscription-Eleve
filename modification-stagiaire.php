@@ -11,9 +11,8 @@
 		<div class="titre">
 			<a > <h1> Modification d'un Stagiaire </h1> </a>
 		</div>
-		<div class="tableau">
-			<?php include('req-affichage-stagiaires.php'); ?>
-		</div>
+		
+		<?php include('req-affichage-stagiaires.php'); ?>
 
     	<form method="post" action="traitement-modification.php" class="formulaire-choix">
 		
