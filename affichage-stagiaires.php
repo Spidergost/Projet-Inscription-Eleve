@@ -20,6 +20,3 @@
 
 	</body>
 </html>
-
-
-req-affichage-stagiaires.css
