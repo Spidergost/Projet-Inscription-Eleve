@@ -76,7 +76,6 @@
 
 				// Do While
                 echo "<html><head><link rel='stylesheet' type='text/css' href='css/suppression-stagiaires.css' /><head><body>";
-                echo"<div class='tableau'>";
 				$id = 1;
 				do {
 					// requête pour tester l'existance de l'id stagiaire
@@ -120,7 +119,6 @@
 					// On incrémente l'id
 
             		$id++;
-            		echo" </div> ";
 				} while ($id < ($IdMAX+1));
 
 			?>
