@@ -133,7 +133,7 @@
 				</table>
 				
 				<div class="modification-stagiaire" >
-					<p>Modifier si nécéssaire : <br /> </p>
+					<p><b>Modifier si nécessaire : </b><br /> </p>
 				</div>
 				
 				<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
@@ -196,7 +196,7 @@
 			</div>
 	      
 	      	<p>
-				<input type="reset" value="Effacer le formulaire" />
+				<!--<input type="reset" value="Effacer le formulaire" />-->
 				<input type="submit" value="Modifier le stagiaire" />
 	     	</p>
     	</form>
