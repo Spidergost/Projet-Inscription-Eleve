@@ -96,8 +96,8 @@
 
 		<?php
     		// Lancement script JS de confirmation pour l'insertion de stagiaire.
-			if (isset($_GET['insertion'])) {
-				if ($_GET['insertion']==1) {
+			if (isset($_GET['nationalite'])) {
+				if ($_GET['nationalite']==1) {
 					echo "<script>alert('Nationalité ajoutée avec succès !')</script>";
 				}
 			}

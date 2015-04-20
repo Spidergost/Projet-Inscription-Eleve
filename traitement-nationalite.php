@@ -29,7 +29,7 @@
 			echo "Nationalité ajoutée avec succès !";
 
             // Redirection
-            header('Location: insertion-stagiaire.php?insertion=1');
+            header('Location: insertion-stagiaire.php?nationalite=1');
         }
         catch (PDOException $e) {
         	echo "Erreur : " . $e->getMessage() . "<br/>";
