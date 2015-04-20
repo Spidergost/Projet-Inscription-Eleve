@@ -133,7 +133,7 @@
 				</table>
 				
 				<div class="modification-stagiaire" >
-					<p>Modifier si nécéssaire : <br /> </p>
+					<p><b>sModifier si nécessaire : </b><br /> </p>
 				</div>
 				
 				<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
