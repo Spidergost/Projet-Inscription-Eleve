@@ -39,9 +39,9 @@
 				<span style="display:block;"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </span>
 			</div>
             </a>
-            <a href="insertion-stagiaire.php" >
+            <a href="assemblage.php" >
 			<div class="page">
-				<span style="display:block;"> Page 6 </span>
+				<span style="display:block;"> Assemblage </span>
 			</div>
             </a>
 		</div>
