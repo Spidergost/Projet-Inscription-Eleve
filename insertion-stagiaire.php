@@ -87,7 +87,7 @@
 		        echo "</select> </p>";
     		?>
 			
-			<font size="2"><a href="ajout-formation-formateur.php"> Souhaitez-vous ajouter un foramteur et une formation ? </a></font>
+			<font size="2"><a href="ajout-formation-formateur.php"> Souhaitez-vous ajouter un formateur et une formation ? </a></font>
 	      	
 			<p>
 				<input type="submit" value="Valider l'insertion" />
@@ -98,14 +98,15 @@
 
 		<?php
     		// Lancement script JS de confirmation pour l'insertion de stagiaire.
-			if (isset($_GET['nationalite'])) {
-				if ($_GET['nationalite']==1) {
-					echo "<script>alert('Nationalité ajoutée avec succès !')</script>";
+			if (isset($_GET['insertion'])) {
+				if ($_GET['insertion']==1) {
+					echo "<script>alert('Informations ajoutées avec succès !')</script>";
 				}
 			}
 		?>
 
-    		<?php
+
+    	<?php
     		// Lancement script JS de confirmation pour l'insertion de stagiaire.
 			if (isset($_GET['erreur'])) {
 				if ($_GET['erreur']==1) {
@@ -113,14 +114,6 @@
 				}
 			}
 		?>
-		
-		<?php
-		// Lancement script JS de confirmation pour l'insertion de stagiaire.
-			if (isset($_GET['insertion'])) {
-				if ($_GET['insertion']==1) {
-					echo "<script>alert('Insertion de stagiaire réussi !')</script>";
-			}
-		}
-		?>
+
     </body>
 </html>

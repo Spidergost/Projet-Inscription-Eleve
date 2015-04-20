@@ -9,16 +9,16 @@
     <body>
 
     	<div class="titre">
-    		<h1> Ajout d'un formateur et d'un formateur </h1>
+    		<h1> Ajout d'un formateur et d'une formation </h1>
     	</div>
 		<form method="post" action="traitement-formation-formateur.php" class="formulaire">
 		
-	    	<p>Nom du Formateur : <br /><input type="text" name="nom" /> <br /> </p>
-			<p>Prénom du Formateur : <br /><input type="text" name="prenom" /> <br /> </p>
-			<p>Salle du Formateur : <br /><input type="text" name="salle" /> <br /> </p>
-			<p>Date de début de la formation : <br /><input type="text" name="debut" /> <br /> </p>
-			<p>Date de fin de la formation : <br /><input type="text" name="fin" /> <br /> </p>
-			<p>Formation : <br /><input type="text" name="formation" /> <br /> </p>
+	    	<p>Nom du Formateur : 	<input type="text" name="nom" /> </p>
+			<p>Prénom du Formateur : 	<input type="text" name="prenom" /> </p>
+			<p>Salle du Formateur : 	<input type="text" name="salle" /> </p>
+			<p>Date de début de la formation (AAAA-MM-JJ):	 <input type="text" name="debut" /> </p>
+			<p>Date de fin de la formation (AAAA-MM-JJ) : 	<input type="text" name="fin" />  </p>
+			<p>Formation :	 <input type="text" name="formation" /> </p>
 			
 	      	<p>
 				<input type="submit" value="Valider l'ajout" />

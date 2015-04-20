@@ -38,12 +38,12 @@
             $idB = $valeurIdB['MAX(ID_SALLE)'];
             $idB++;
             // Requête SQL préparé
-            $requeteFormateur = $db->prepare('INSERT INTO SALLE (ID_SALLE, LIBELLE)  VALUES (:idB, :salle)');
+            $requeteSalle = $db->prepare('INSERT INTO SALLE (ID_SALLE, LIBELLE)  VALUES (:idB, :salle)');
             // On remplie les paramètres
-            $requeteFormation->bindParam(':idB', $idB, PDO::PARAM_INT, 2);
-			$requeteFormation->bindParam(':formation', $formation, PDO::PARAM_STR, 20);
+            $requeteSalle->bindParam(':idB', $idB, PDO::PARAM_INT, 2);
+			$requeteSalle->bindParam(':salle', $salle, PDO::PARAM_STR, 20);
             // On l'éxecute
-            $requeteFormation->execute();
+            $requeteSalle->execute();
 			
 			
 			/***3ème requête : formateur ***/
@@ -73,8 +73,6 @@
 			$requeteFormationFormateur->bindParam(':fin', $fin, PDO::PARAM_STR, 20);
             // On l'éxecute
             $requeteFormationFormateur->execute();
-			
-			echo "Formation et formateur ajoutés avec succès !";
 
             // Redirection
             header('Location: insertion-stagiaire.php?insertion=1');
@@ -85,7 +83,7 @@
         }
     }
     else {
-        header('Location: insertion-stagiaire.php?erreur=1');
+        header('Location: ajout-formation-formateur.php?erreur=1');
     }
     
 ?>
