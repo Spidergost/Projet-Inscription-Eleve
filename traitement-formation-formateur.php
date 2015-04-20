@@ -48,12 +48,12 @@
 			
 			/***3ème requête : formateur ***/
 			// On calcul l'Id à mettre au nouveau formateur (l'id max précédent + 1)
-            $requeteIdFormateur = $db->query('SELECT MAX(ID_FORMATEUR)FROM FORMATEUR');
-            $valeurIdC = $requeteIdFormateur->fetch();
-            $idC = $valeurIdC['MAX(ID_FORMATEUR)'];
-            $idC++;
+            //$requeteIdFormateur = $db->query('SELECT MAX(ID_FORMATEUR)FROM FORMATEUR');
+            //$valeurIdC = $requeteIdFormateur->fetch();
+            //$idC = $valeurIdC['MAX(ID_FORMATEUR)'];
+            //$idC++;
             // Requête SQL préparé
-            $requeteFormateur = $db->prepare('INSERT INTO FORMATEUR (ID_FORMATEUR, ID_SALLE, NOM, PRENOM )  VALUES (:idc, :idB, :nom, :prenom)');
+            $requeteFormateur = $db->prepare('INSERT INTO FORMATEUR (ID_FORMATEUR, ID_SALLE, NOM, PRENOM )  VALUES (:idC, :idB, :nom, :prenom)');
             // On remplie les paramètres
             $requeteFormateur->bindParam(':idC', $idC, PDO::PARAM_INT, 2);
 			$requeteFormateur->bindParam(':idB', $idB, PDO::PARAM_INT, 2);
@@ -65,7 +65,7 @@
 			
 			/***3ème requête : formation_formateur ***/
             // Requête SQL préparé
-            $requeteFormationFormateur = $db->prepare('INSERT INTO TYPE_FORMATION_FORMATEUR (ID_FORMATEUR, ID_TYPE_FORMATION, DATE_DEBUT_FORMATION, DATE_FIN_FORMATION ) VALUES (:idc, :idA, :, :debut, :fin)');
+            $requeteFormationFormateur = $db->prepare('INSERT INTO TYPE_FORMATION_FORMATEUR (ID_FORMATEUR, ID_TYPE_FORMATION, DATE_DEBUT_FORMATION, DATE_FIN_FORMATION ) VALUES (:idC, :idA, :debut, :fin)');
             // On remplie les paramètres
             $requeteFormationFormateur->bindParam(':idC', $idC, PDO::PARAM_INT, 2);
 			$requeteFormationFormateur->bindParam(':idA', $idA, PDO::PARAM_INT, 2);
