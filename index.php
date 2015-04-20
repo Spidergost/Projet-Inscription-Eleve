@@ -34,7 +34,7 @@
 				<span style="display:block;"> Modifier les informations d'un stagiaire </span>
 			</div>
             </a>
-            <a href="listing.php" >
+            <a href="affichage-formateur.php" >
 			<div class="page">
 				<span style="display:block;"> Liste des formations, leurs formateurs, <br/> leurs salles avec les dates </span>
 			</div>
