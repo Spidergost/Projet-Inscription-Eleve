@@ -23,6 +23,42 @@
 												NOM=:nom, 
 												PRENOM=:prenom 
 												WHERE ID=:id');
+									
+			// Requête SQL préparé
+			$requeteValues = $db->prepare('SELECT STAGIAIRE.NOM, STAGIAIRE.PRENOM, ID_TYPE_FORMATION AS \'FORMATION\', NATIONALITE AS \'NATIONALITE\'
+				FROM STAGIAIRE
+				LEFT JOIN TYPE_FORMATION
+				ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
+				LEFT JOIN NATIONALITE
+				ON STAGIAIRE.ID_NATIONALITE = NATIONALITE.ID_NATIONALITE
+				WHERE ID = :id');
+			// On remplie les paramètres
+			$requeteValues->bindParam(':id', $id, PDO::PARAM_INT, 2);
+			// On l'éxecute
+			$requeteValues->execute();
+			// On fetch Right !
+			$valeurValues = $requeteValues->fetch();
+			
+			if($id_type_formation == 0)
+			{
+				$id_type_formation = $valeurValues['FORMATION'];
+			}
+			
+			if($id_nationalite == 0)
+			{
+				$id_nationalite = $valeurValues['NATIONALITE'];
+			}
+			
+			if($prenom == "")
+			{
+				$prenom = $valeurValues['NOM'];
+			}
+			
+			if($nom == "")
+			{
+				$nom = $valeurValues['PRENOM'];
+			}
+			
 
             // On remplie les paramètres
             $requeteModification->bindParam(':id', $id, PDO::PARAM_INT, 2);
