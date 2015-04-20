@@ -14,18 +14,10 @@
             $db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
             // prise en charge de l'utf-8
             $db->exec("SET CHARACTER SET utf8");
-            echo "Connexion à la base réussi. <br/>";
-            
-            // Requête SQL préparé
-            $requeteModification = $db->prepare('UPDATE STAGIAIRE 
-												SET ID_TYPE_FORMATION=:id_type_formation, 
-												ID_NATIONALITE=:id_nationalite, 
-												NOM=:nom, 
-												PRENOM=:prenom 
-												WHERE ID=:id');
-									
+            echo "Connexion à la base réussi. <br/>";         
+			
 			// Requête SQL préparé
-			$requeteValues = $db->prepare('SELECT STAGIAIRE.NOM, STAGIAIRE.PRENOM, ID_TYPE_FORMATION AS \'FORMATION\', NATIONALITE AS \'NATIONALITE\'
+			$requeteValues = $db->prepare('SELECT STAGIAIRE.NOM, STAGIAIRE.PRENOM, TYPE_FORMATION.ID_TYPE_FORMATION AS \'FORMATION\', NATIONALITE.ID_NATIONALITE AS \'NATIONALITE\'
 				FROM STAGIAIRE
 				LEFT JOIN TYPE_FORMATION
 				ON STAGIAIRE.ID_TYPE_FORMATION = TYPE_FORMATION.ID_TYPE_FORMATION
@@ -51,15 +43,23 @@
 			
 			if($prenom == "")
 			{
-				$prenom = $valeurValues['NOM'];
+				$prenom = $valeurValues['PRENOM'];
 			}
 			
 			if($nom == "")
 			{
-				$nom = $valeurValues['PRENOM'];
+				$nom = $valeurValues['NOM'];
 			}
 			
-
+			// Requête SQL préparé
+            $requeteModification = $db->prepare('UPDATE STAGIAIRE 
+												SET ID_TYPE_FORMATION=:id_type_formation, 
+												ID_NATIONALITE=:id_nationalite, 
+												NOM=:nom, 
+												PRENOM=:prenom 
+												WHERE ID=:id');
+									
+			
             // On remplie les paramètres
             $requeteModification->bindParam(':id', $id, PDO::PARAM_INT, 2);
 			$requeteModification->bindParam(':id_type_formation', $id_type_formation, PDO::PARAM_INT, 2);
