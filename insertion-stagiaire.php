@@ -119,6 +119,6 @@
 					echo "<script>alert('Insertion de stagiaire réussi !')</script>";
 			}
 		}
-
+		?>
     </body>
 </html>
