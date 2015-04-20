@@ -196,7 +196,7 @@
 			</div>
 	      
 	      	<p>
-				<input type="reset" value="Effacer le formulaire" />
+				<!--<input type="reset" value="Effacer le formulaire" />-->
 				<input type="submit" value="Modifier le stagiaire" />
 	     	</p>
     	</form>
