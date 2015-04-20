@@ -86,8 +86,10 @@
 		        }
 		        echo "</select> </p>";
     		?>
-
-	      	<p>
+			
+			<font size="2"><a href="ajout-formation-formateur.php"> Souhaitez-vous ajouter un foramteur et une formation ? </a></font>
+	      	
+			<p>
 				<input type="submit" value="Valider l'insertion" />
 	     	</p>
     	</form>
