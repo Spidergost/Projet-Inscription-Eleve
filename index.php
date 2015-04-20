@@ -45,14 +45,8 @@
 			</div>
             </a>
 		</div>
-
+		
 		<?php
-			// Lancement script JS de confirmation pour l'insertion de stagiaire.
-			if (isset($_GET['insertion'])) {
-				if ($_GET['insertion']==1) {
-					echo "<script>alert('Insertion de stagiaire réussi !')</script>";
-				}
-			}
 			else if (isset($_GET['suppression'])) {
 				if ($_GET['suppression']==1) {
 					echo "<script>alert('Suppression du stagiaire réussi !')</script>";
