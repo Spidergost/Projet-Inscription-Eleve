@@ -29,7 +29,7 @@
             echo "Stagiaire supprimé avec succès !";
 
             // Redirection
-            header('Location: index.php?suppression=1');
+            header('Location: suppression-stagiaire.php?suppression=1');
         }
         catch (PDOException $e) {
         	echo "Erreur : " . $e->getMessage() . "<br/>";

@@ -45,14 +45,6 @@
 			</div>
             </a>
 		</div>
-		
-		<?php
-			if (isset($_GET['suppression'])) {
-				if ($_GET['suppression']==1) {
-					echo "<script>alert('Suppression du stagiaire réussi !')</script>";
-				}
-			}
-		?>
 
     </body>
 </html>

@@ -136,5 +136,22 @@
 		</br>
 		<a href="index.php">Retour au menu</a>
 
+		<?php
+			if (isset($_GET['suppression'])) {
+				if ($_GET['suppression']==1) {
+					echo "<script>alert('Suppression du stagiaire réussi !')</script>";
+				}
+			}
+		?>
+
+		<?php
+    		// Lancement script JS de confirmation pour l'insertion de stagiaire.
+			if (isset($_GET['erreur'])) {
+				if ($_GET['erreur']==1) {
+					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
+				}
+			}
+		?>
+
     </body>
 </html>
