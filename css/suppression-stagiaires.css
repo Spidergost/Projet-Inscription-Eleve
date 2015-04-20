@@ -19,7 +19,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	background:#86CDE4;
+	/*background:#86CDE4; */
 }
 .affistag{
     font-weight: bold; /* met le texte en gras */
@@ -30,7 +30,7 @@ body {
 
 
 table {
-    background-color: #86CDE4;
+    /*background-color: #86CDE4; */
 	color:#303030;
 	/*border-radius:10px; (arrondi les angles).*/
 	box-shadow: 3px 3px 0px #aaa;

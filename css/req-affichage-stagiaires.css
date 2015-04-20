@@ -1,7 +1,7 @@
 table {
-    background-color: #75F359;
-	color:#303030;
-	/*border-radius:10px; (arrondi les angles).*/
+
+	/*color:#303030; couleur en arrière plan*/
+	/*border-radius:10px; (arrondi les angles). */
 	box-shadow: 3px 3px 0px #567D4E;
 	margin: auto;
 	text-align: center;
