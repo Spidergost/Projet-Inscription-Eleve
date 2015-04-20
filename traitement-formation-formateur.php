@@ -69,8 +69,8 @@
             // On remplie les paramètres
             $requeteFormationFormateur->bindParam(':idC', $idC, PDO::PARAM_INT, 2);
 			$requeteFormationFormateur->bindParam(':idA', $idA, PDO::PARAM_INT, 2);
-			$requeteFormationFormateur->bindParam(':debut', $debut, PDO::PARAM_STR, 20);
-			$requeteFormationFormateur->bindParam(':fin', $fin, PDO::PARAM_STR, 20);
+			$requeteFormationFormateur->bindParam(':debut', $debut, PDO::PARAM_STR,20);
+			$requeteFormationFormateur->bindParam(':fin', $fin, PDO::PARAM_STR,20);
             // On l'éxecute
             $requeteFormationFormateur->execute();
 
