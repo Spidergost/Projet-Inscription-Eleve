@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/affichage-stagiaires.css" media="screen" />
-        <title>Suppression des stagiaires v2</title>
+        <title>Suppression des stagiaires </title>
     </head>
 
     <body>
 
     	<div class="titre">
-    		<h1>Suppression des stagiaires v2</h1>
+    		<h1>Suppression des stagiaires </h1>
     	</div>
 
     	<?php
@@ -55,6 +55,7 @@
 			?>
 
 			<?php
+			echo '<br>';
 			echo "<html><head><link rel='stylesheet' type='text/css' href='css/suppression-stagiaires.css' /><head><body>";
 				//  1) Requête pour avoir le nombre de stagiaire(s)
 				echo"<div class='affistag'>";
@@ -63,6 +64,7 @@
 			    $nbStagiaire = $valeurNbStagiaire['COUNT(ID)'];
 			    echo "<p> $nbStagiaire stagiaire(s) : ";
                 echo" </div> ";
+                echo '<br>';
 			?>
 
 			<?php
@@ -101,7 +103,7 @@
 							WHERE ID = :id');
             			// On remplie les paramètres
             			$requeteAffichage->bindParam(':id', $id, PDO::PARAM_INT, 2);
-            			// On l'éxecute
+            			// On l'exécute
             			$requeteAffichage->execute();
             			// On fetch Right !
 		        		$valeurAffichage = $requeteAffichage->fetch();
@@ -124,12 +126,12 @@
 			?>
 
 		</table>
-
+        <br/>
 		<!-- Bouton envoie formulaire -->
 		<br /> <input type="submit" value="Valider la suppression" /> <br />
 	</form>
 
-		<br /> <?php echo "L'IdMAX vaut : $IdMAX</p>"; ?>
+		<br /> <?php echo "<b><u>L'IdMAX vaut</u> : $IdMAX</b></p>"; ?>
 
 		</br>
 		<a href="index.php">Retour au menu</a>
