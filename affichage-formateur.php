@@ -79,6 +79,8 @@
 				}
 				echo "</select></p>";
 				?>
+				<br/>
+				<font size="2"><a href="ajout-formation-formateur-affichage-formateur.php"> Souhaitez-vous ajouter un formateur et une formation ? </a></font>
 			<p>
 				<input type="submit" name="envoyer" value="afficher les formations" />
 	     	</p>
