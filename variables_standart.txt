@@ -159,10 +159,10 @@ Variables pour ajout-formateur-formation:
 Variables environement : $formation = $_POST['formation']; $nom = $_POST['nom']; $prenom = $_POST['prenom'];
 $salle = $_POST['salle']; $debut = $_POST['debut']; $fin = $_POST['fin'];
 
-Variables de travail : $valeurIdA ,  $idA, $valeurIdB , $idB
+Variables de travail : $valeurIdA ,  $idA, $valeurIdB , $idB , $idC,
 
 Variables requêtes : $requeteIdFormation , $requeteFormation, $requeteIdSalle, $requeteSalle, 
-$requeteFormateur , $requeteFormationFormateur
+$requeteFormateur , $requeteFormationFormateur, $requeteDateFormation.
 
 --------
 
