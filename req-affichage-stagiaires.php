@@ -148,10 +148,7 @@
 
 			</div>
 
-            <?php
-                echo '</br>';
-                echo "<b><u>L'IdMAX vaut</u> :</b> $IdMAX</p>";
-            ?>
+            
 
 		</body>
 </html>

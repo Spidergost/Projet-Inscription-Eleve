@@ -131,8 +131,6 @@
 		<br /> <input type="submit" value="Valider la suppression" /> <br />
 	</form>
 
-		<br /> <?php echo "<b><u>L'IdMAX vaut</u> : $IdMAX</b></p>"; ?>
-
 		</br>
 		<a href="index.php">Retour au menu</a>
 
