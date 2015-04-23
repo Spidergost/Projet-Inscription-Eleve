@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/modification-stagiaire.css" media="screen" />
-        <title>Modification d'un Stagiaire</title>
-    </head>
 
+        <title>Modification d'un stagiaire</title>
+        <link rel="stylesheet" type="text/css" href="css/modification-stagiaire.css" media="screen" />
+    </head>
     <body>
 		<div class="titre">
-			<a > <h1> Modification d'un Stagiaire </h1> </a>
+			<a > <h1> Modification d'un stagiaire </h1> </a>
 		</div>
 
     	<!-- Début du formulaire -->
@@ -64,9 +64,9 @@
 						$requeteNbStagiaire = $db->query('SELECT COUNT(ID) FROM STAGIAIRE');
 					    $valeurNbStagiaire = $requeteNbStagiaire->fetch();
 					    $nbStagiaire = $valeurNbStagiaire['COUNT(ID)'];
-					    echo "<p> $nbStagiaire stagiaire(s) : <br />";
+					    echo "<p><b> $nbStagiaire stagiaire(s) : </b><br />";
 					    echo '<br/>';
-					    echo "Sélectionner l'id a modifier : ";
+					    echo "Sélectionner l'id à modifier : ";
 		                echo" </div> ";
 					?>
 
