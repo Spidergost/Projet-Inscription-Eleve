@@ -24,7 +24,6 @@
     	<div class="titre">
     		<h1> Listing en fonction des formations </h1>
     	</div>
-    	<form method="post" action="traitement-affichage-formateur.php" class="formulaire">
     	    <br />
     	    <b><u>Les formations</u> :</b><br /><br />
 			
@@ -104,39 +103,9 @@
 
     		?>
                  <br />
-				 <b><u>Formateurs par date</u> :</b><br /><br />
-				<?php
-				// FORMATEUR
-		    	// Requête pour avoir le nombre de formateur
-		    	$requeteNbFormateur = $db->query('SELECT COUNT(ID_FORMATEUR) FROM FORMATEUR');
-		        $valeurNbFormateur = $requeteNbFormateur->fetch();
-		        $nbFormateur = $valeurNbFormateur['COUNT(ID_FORMATEUR)'];
-		        echo "<p> $nbFormateur formateur(s) : ";
-
-				//affichage des formateur
-				echo "<select name='option'>";
-				for ($i=1; $i < ($nbFormateur+1) ; $i++) {
-					// Requête SQL préparé
-					$requeteFormateur = $db->prepare('SELECT * FROM FORMATEUR WHERE ID_FORMATEUR=:id');
-					// On remplie les paramêtres
-					$requeteFormateur->bindParam(':id', $i, PDO::PARAM_INT, 2);
-					// On l'éxécute
-					$requeteFormateur->execute();
-					// On fetch Rigght !
-					$valeurFormateur = $requeteFormateur->fetch();
-					$idFormateur = $valeurFormateur['ID_FORMATEUR'];
-					$libelleFormateur = $valeurFormateur['NOM'];
-					$prenom = $valeurFormateur['PRENOM'];
-					$salle = $valeurFormateur['ID_SALLE'];
-					echo "<option value='$idFormateur'> $libelleFormateur $prenom - salle: $salle</option><br />";
-				}
-				echo "</select></p>";
-				?>
+				 
 				<br/>
 				<font size="2"><a href="ajout-formation-formateur-affichage-formateur.php"> Souhaitez-vous ajouter un formateur et une formation ? </a></font>
-			<p>
-				<input type="submit" name="envoyer" value="Afficher les formations" />
-	     	</p>
 
 
 		<br/>
