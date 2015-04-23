@@ -12,6 +12,8 @@
     		<h1> Insérer un stagiaire en formation </h1>
     	</div>
 
+        </br><b><u>Insérer un stagiaire</u> : </b>
+
     	<?php
 			// Connection a la base
 			try {
@@ -19,7 +21,7 @@
 				$db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
 				// prise en charge de l'utf-8
 				$db->exec("SET CHARACTER SET utf8");
-				echo "Connexion à la base réussi. <br/>";
+				//echo "Connexion à la base réussi. <br/>";
 			}
 			catch (PDOException $e) {
 				echo "Erreur : " . $e->getMessage() . "<br/>";
@@ -29,8 +31,8 @@
 
     	<form method="post" action="traitement-insertion.php" class="formulaire">
 
-	    	<p>Nom : <br /><input type="text" name="nom" /> <br /> </p>
-		  	<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
+	    	</br><p>Nom : <input type="text" name="nom" /> <br /> </p>
+                 <p>Prénom : <input type="text" name="prenom" /> <br /> </p>
 
 	      	<?php
 		        // NATIONALITE
@@ -86,15 +88,15 @@
 		        }
 		        echo "</select> </p>";
     		?>
-			
+
 			<font size="2"><a href="ajout-formation-formateur.php"> Souhaitez-vous ajouter un formateur et une formation ? </a></font>
-	      	
+
 			<p>
-				<input type="submit" value="Valider l'insertion" />
+				</br><input type="submit" value="Valider l'insertion" />
 	     	</p>
     	</form>
 
-    	<a href="index.php">Retour au menu</a>
+    	</br><a href="index.php">Retour au menu</a>
 
 		<?php
     		// Lancement script JS de confirmation pour l'insertion de stagiaire.
