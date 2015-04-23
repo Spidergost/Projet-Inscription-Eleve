@@ -14,7 +14,7 @@
 					$db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
 					// prise en charge de l'utf-8
 					$db->exec("SET CHARACTER SET utf8");
-					echo "Connexion à la base réussi. <br/>";
+					//echo "Connexion à la base réussi. <br/>";
 				}
 				catch (PDOException $e) {
 					echo "Erreur : " . $e->getMessage() . "<br/>";
@@ -25,6 +25,8 @@
     		<h1> Listing en fonction des formations </h1>
     	</div>
     	<form method="post" action="traitement-affichage-formateur.php" class="formulaire">
+    	    <br />
+    	    <b><u>Les formations</u> :</b><br /><br />
     		<?php
 		        // FORMATION
 		    	// Requête pour avoir le nombre de formation
@@ -50,8 +52,8 @@
 		        }
 		        echo "</select> </p>";
     		?>
-			
-				 formateurs par date :<br /><br />
+                 <br />
+				 <b><u>Formateurs par date</u> :</b><br /><br />
 				<?php
 				// FORMATEUR
 		    	// Requête pour avoir le nombre de formateur
@@ -59,7 +61,7 @@
 		        $valeurNbFormateur = $requeteNbFormateur->fetch();
 		        $nbFormateur = $valeurNbFormateur['COUNT(ID_FORMATEUR)'];
 		        echo "<p> $nbFormateur formateur(s) : ";
-				
+
 				//affichage des formateur
 				echo "<select name='option'>";
 				for ($i=1; $i < ($nbFormateur+1) ; $i++) {
@@ -82,12 +84,12 @@
 				<br/>
 				<font size="2"><a href="ajout-formation-formateur-affichage-formateur.php"> Souhaitez-vous ajouter un formateur et une formation ? </a></font>
 			<p>
-				<input type="submit" name="envoyer" value="afficher les formations" />
+				<input type="submit" name="envoyer" value="Afficher les formations" />
 	     	</p>
-		
-		
+
+
 		<br/>
-		
+
 
     	<a href="index.php">Retour au menu</a>
 
@@ -97,8 +99,8 @@
 				if ($_GET['erreur']==1) {
 					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
 				}
-			}		
+			}
 		?>
-    
+
     </body>
 </html>
