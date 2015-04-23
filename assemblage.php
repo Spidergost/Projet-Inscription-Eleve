@@ -130,7 +130,7 @@ $idNationalite = isset($_POST['idNationalite']);
 			<p>	
 				<input type="submit" name="envoyer" value="afficher les formations" />
 	     	</p>
-				<input type="submit" name="envoyer" value="envoyerr" />
+				<input type="submit" name="envoyer" value="envoyer" />
     	</form>
 		
 		<?php		
@@ -194,7 +194,7 @@ $idNationalite = isset($_POST['idNationalite']);
 			
 		 }
 		 else{
-			if($_POST['envoyer']==('envoyerr')) {
+			if($_POST['envoyer']==('envoyer')) {
 			// appel du traitement
 			// Enregistrement des variables à partir du formulaire
 				$nom = $_POST['nom'];
