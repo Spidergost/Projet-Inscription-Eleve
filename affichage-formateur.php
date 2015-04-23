@@ -68,7 +68,7 @@
 					$nbFormaSpec = $requeteFormateurNb->rowCount();
 					echo $nbFormaSpec;
 					for ($y = 0; $y < $nbFormaSpec; $y++) {*/
-						$requeteFormateur = $db->prepare('SELECT NOM, PRENOM, DATE_DEBUT_FORMATION, DATE_FIN_FORMATION
+						$requeteFormateur = $db->prepare('SELECT NOM, PRENOM, DATE_DEBUT_FORMATION, DATE_FIN_FORMATION, ID_SALLE
 														FROM FORMATEUR
 														LEFT JOIN TYPE_FORMATION_FORMATEUR ON FORMATEUR.ID_FORMATEUR = TYPE_FORMATION_FORMATEUR.ID_FORMATEUR
 														WHERE TYPE_FORMATION_FORMATEUR.ID_TYPE_FORMATION = :id');
@@ -83,13 +83,14 @@
 						if ($nblignes != 0) {
 							echo "<table BORDER = \"1\">";
 							
-							echo "<tr><th>NOM</th><th>PRENOM</th><th>DATE DE DEBUT</th><th>DATE DE FIN</th> </tr>";
+							echo "<tr><th>NOM</th><th>PRENOM</th><th>DATE DE DEBUT</th><th>DATE DE FIN</th> <th>ID SALLE</th> </tr>";
 							
 							foreach($valeurFormateur as $ligne) {
 									echo "<tr> <td>" . $ligne['NOM'] . "</td>";
 									echo "<td>" . $ligne['PRENOM'] . "</td>";
 									echo "<td>" . $ligne['DATE_DEBUT_FORMATION'] . "</td>";
-									echo "<td>" . $ligne['DATE_FIN_FORMATION'] . "</td> </tr>";
+									echo "<td>" . $ligne['DATE_FIN_FORMATION'] . "</td>";
+									echo "<td>" . $ligne['ID_SALLE'] . "</td> </tr>";
 									echo "<br />";
 									}
 							echo "</table>";
