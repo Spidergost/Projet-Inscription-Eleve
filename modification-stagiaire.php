@@ -7,16 +7,15 @@
     </head>
 
     <body>
-	
 		<div class="titre">
 			<a > <h1> Modification d'un Stagiaire </h1> </a>
 		</div>
 
     	<!-- Début du formulaire -->
     	<form method="post" action="traitement-modification.php" class="formulaire-choix">
-		
+
 			<div class="formulaire-modification" >
-			
+
 				<?php
 					try {
 				        // Connexion à la base de données
@@ -66,6 +65,7 @@
 					    $valeurNbStagiaire = $requeteNbStagiaire->fetch();
 					    $nbStagiaire = $valeurNbStagiaire['COUNT(ID)'];
 					    echo "<p> $nbStagiaire stagiaire(s) : <br />";
+					    echo '<br/>';
 					    echo "Sélectionner l'id a modifier : ";
 		                echo" </div> ";
 					?>
@@ -131,14 +131,14 @@
 					?>
 
 				</table>
-				
+
 				<div class="modification-stagiaire" >
-					<p><b>Modifier si nécessaire : </b><br /> </p>
+					<p><b><u>Modifier si nécessaire</u> : </b><br /> </p>
 				</div>
-				
-				<p>Nom :	<br /><input type="text" name="nom" /> <br /> </p>
-				<p>Prénom : <br /><input type="text" name="prenom" /> <br /> </p>
-				
+
+				<p>Nom : <input type="text" name="nom" /> <br /> </p>
+				<p>Prénom : <input type="text" name="prenom" /> <br /> </p>
+
 				<?php
 			        // NATIONALITE
 			    	// Requête pour avoir le nombre de nationalite
@@ -150,7 +150,7 @@
 			        // Affichage des nationalites
 			        echo "<select name=\"id_nationalite\">";
 			        echo "<option value='0'> Aucune modification</option>";
-			        for ($i=1; $i < ($nbNationalite+1) ; $i++) { 
+			        for ($i=1; $i < ($nbNationalite+1) ; $i++) {
 			        	// Requête SQL préparé
 			        	$requeteNationalite = $db->prepare('SELECT * FROM NATIONALITE WHERE ID_NATIONALITE=:id');
 			        	// On remplie les paramètres
@@ -165,7 +165,7 @@
 			        }
 			        echo "</select> </p>";
     			?>
-	      	
+
 	    		<?php
 			        // FORMATION
 			    	// Requête pour avoir le nombre de formation
@@ -177,7 +177,7 @@
 			        // Affichage des formations
 			        echo "<select name=\"id_type_formation\">";
 			        echo "<option value='0'> Aucune modification</option>";
-			        for ($i=1; $i < ($nbFormation+1) ; $i++) { 
+			        for ($i=1; $i < ($nbFormation+1) ; $i++) {
 			        	// Requête SQL préparé
 			        	$requeteFormation = $db->prepare('SELECT * FROM TYPE_FORMATION WHERE ID_TYPE_FORMATION=:id');
 			        	// On remplie les paramètres
@@ -192,9 +192,9 @@
 			        }
 			        echo "</select> </p>";
 	    		?>
-			
+
 			</div>
-	      
+
 	      	<p>
 				<!--<input type="reset" value="Effacer le formulaire" />-->
 				<input type="submit" value="Modifier le stagiaire" />
@@ -209,8 +209,8 @@
 				if ($_GET['erreur']==1) {
 					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
 				}
-			}	
+			}
 		?>
-    
+
     </body>
 </html>
