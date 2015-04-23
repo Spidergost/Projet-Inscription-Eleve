@@ -64,7 +64,7 @@
 			
 			/***4ème requete :  date_foramtion***/
 			// Requête SQL préparé
-            $requeteDate_formation = $db->prepare('INSERT INTO DATE_FORMATION (DATE_DEBUT_FORMATION) VALUES (:debut)');
+            $requeteDate_formation = $db->prepare('INSERT INTO DATE (DATE_DEBUT_FORMATION) VALUES (:debut)');
             // On remplie les paramètres
 			$requeteDate_formation->bindParam(':debut', $debut, PDO::PARAM_STR,20);
             // On l'éxecute
