@@ -62,7 +62,7 @@
             // On l'éxecute
             $requeteFormateur->execute();
 			
-			/***4ème requete :  date_foramtion***/
+			/***4ème requete :  date***/
 			// Requête SQL préparé
             $requeteDateFormation = $db->prepare('INSERT INTO DATE (DATE_DEBUT_FORMATION) VALUES (:debut)');
             // On remplie les paramètres
