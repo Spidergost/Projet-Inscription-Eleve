@@ -62,8 +62,16 @@
             // On l'éxecute
             $requeteFormateur->execute();
 			
+			/***4ème requete :  date_foramtion***/
+			// Requête SQL préparé
+            $requeteDate_formation = $db->prepare('INSERT INTO DATE_FORMATION (DATE_DEBUT_FORMATION) VALUES (:debut)');
+            // On remplie les paramètres
+			$requeteDate_formation->bindParam(':debut', $debut, PDO::PARAM_STR,20);
+            // On l'éxecute
+            $requeteDate_formation->execute();
+			 
 			
-			/***3ème requête : formation_formateur ***/
+			/***5ème requête : formation_formateur ***/
             // Requête SQL préparé
             $requeteFormationFormateur = $db->prepare('INSERT INTO TYPE_FORMATION_FORMATEUR (ID_FORMATEUR, ID_TYPE_FORMATION, DATE_DEBUT_FORMATION, DATE_FIN_FORMATION ) VALUES (:idC, :idA, :debut, :fin)');
             // On remplie les paramètres

@@ -5,7 +5,7 @@ Lorsqu'on veut disposer d'une variable pour une requête préparée ou une varia
 le nom de la colonne visé.
 Exemple:
 
-    $id = $_POST['id'];
+    	$id = $_POST['id'];
 	$id_type_formation = $_POST['id_type_formation'];
 	$id_nationalite = $_POST['id_nationalite'];
 	$nom = $_POST['nom'];																						//Ici on prend pour exemple $nom qui récupère la valeur du formulaire de nom "nom"
@@ -25,7 +25,22 @@ $requeteModification = $db->prepare('UPDATE STAGIAIRE
 			$requeteModification->bindParam(':id_nationalite', $id_nationalite, PDO::PARAM_INT, 2);
 			$requeteModification->bindParam(':prenom', $prenom, PDO::PARAM_STR, 2);
 
-			
+-----------
+Variable de connexion :
+<?php
+			try {
+		        // Connexion à la base de données
+		        $db = new PDO('mysql:host=localhost;dbname=formation', 'root', '');
+		        // prise en charge de l'utf-8
+		        $db->exec("SET CHARACTER SET utf8");
+		        //echo "<p>Connexion à la base réussi.</p> <br/>";
+		    }
+		    catch (PDOException $e) {
+		    	echo "Erreur : " . $e->getMessage() . "<br/>";
+		    	die();
+		    }
+?>		
+------------	
 Liste des variables rapportant à la base de données:
 {
 	Table date
@@ -107,6 +122,7 @@ Liste des variables rapportant à la base de données:
 			DATE_FIN_FORMATION;
 		}
 	}
+--------
 Variables et class de index.php
 {
 	class:
@@ -123,4 +139,42 @@ Variables et class de index.php
 		}
 	}
 }
+--------
+Variables pour la page de suppression:
+
+Requetes SQL : $requeteSuppression et $requeteSuppression2
+
+Variable à récuperer : $id = $_POST['id']
+--------
+Variables pour l'affichage du tableau : 
+
+Requetes SQL : $requeteNbStagiaire , $requeteIdMAX , $requeteTestStagiaire , $requeteAffichage 
+
+Variables de travail : $nbStagiaire , $valeurNbStagiaire , $IdMAX , $valeurIdMAX , $TestStagiaire , $valeurAffichage ,
+$prenomStagiaire , $nomStagiaire , $formationStagiaire , $nationaliteStagiaire , $id.
+
+---------
+Variables pour ajout-formateur-formation:
+
+Variables environement : $formation = $_POST['formation']; $nom = $_POST['nom']; $prenom = $_POST['prenom'];
+$salle = $_POST['salle']; $debut = $_POST['debut']; $fin = $_POST['fin'];
+
+Variables de travail : $valeurIdA ,  $idA, $valeurIdB , $idB
+
+Variables requêtes : $requeteIdFormation , $requeteFormation, $requeteIdSalle, $requeteSalle, 
+$requeteFormateur , $requeteFormationFormateur
+
+--------
+
+
+
+
+
+
+
+
+
+
+
+
 

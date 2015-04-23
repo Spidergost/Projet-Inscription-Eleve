@@ -16,8 +16,8 @@
 	    	<p>Nom du Formateur : 	<input type="text" name="nom" /> </p>
 			<p>Prénom du Formateur : 	<input type="text" name="prenom" /> </p>
 			<p>Salle du Formateur : 	<input type="text" name="salle" /> </p>
-			<p>Date de début de la formation (AAAA-MM-JJ):	 <input type="date" name="debut" /> </p>
-			<p>Date de fin de la formation (AAAA-MM-JJ) : 	<input type="date" name="fin" />  </p>
+			<p>Date de début de la formation :	 <input type="date" name="debut" /> </p>
+			<p>Date de fin de la formation : 	<input type="date" name="fin" />  </p>
 			<p>Formation :	 <input type="text" name="formation" /> </p>
 			
 	      	<p>
