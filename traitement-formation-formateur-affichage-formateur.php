@@ -75,7 +75,7 @@
             $requeteFormationFormateur->execute();
 
             // Redirection
-            header('Location: affichage-formation.php?insertion=1');
+            header('Location: affichage-formateur.php?insertion=1');
         }
         catch (PDOException $e) {
         	echo "Erreur : " . $e->getMessage() . "<br/>";
@@ -83,7 +83,7 @@
         }
     }
     else {
-        header('Location: ajout-formation-formateur-affichage-formation.php?erreur=1');
+        header('Location: ajout-formation-formateur-affichage-formateur.php?erreur=1');
     }
     
 ?>

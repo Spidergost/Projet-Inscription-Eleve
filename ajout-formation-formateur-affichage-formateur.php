@@ -11,7 +11,7 @@
     	<div class="titre">
     		<h1> Ajout d'un formateur et d'une formation </h1>
     	</div>
-		<form method="post" action="traitement-formation-formateur-affichage-formation.php" class="formulaire">
+		<form method="post" action="traitement-formation-formateur-affichage-formateur.php" class="formulaire">
 		
 	    	<p>Nom du Formateur : 	<input type="text" name="nom" /> </p>
 			<p>Prénom du Formateur : 	<input type="text" name="prenom" /> </p>
