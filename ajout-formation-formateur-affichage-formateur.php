@@ -12,19 +12,21 @@
     		<h1> Ajout d'un formateur et d'une formation </h1>
     	</div>
 		<form method="post" action="traitement-formation-formateur-affichage-formateur.php" class="formulaire">
-		
-	    	<p>Nom du Formateur : 	<input type="text" name="nom" /> </p>
+
+		    </br><b><u>Ajout d'un formateur et d'une formation</u> : </b>
+
+		    <br/></br><p>Nom du Formateur : 	<input type="text" name="nom" /> </p>
 			<p>Prénom du Formateur : 	<input type="text" name="prenom" /> </p>
 			<p>Salle du Formateur : 	<input type="text" name="salle" /> </p>
 			<p>Date de début de la formation (AAAA-MM-JJ):	 <input type="date" name="debut" /> </p>
 			<p>Date de fin de la formation (AAAA-MM-JJ) : 	<input type="date" name="fin" />  </p>
 			<p>Formation :	 <input type="text" name="formation" /> </p>
-			
+
 	      	<p>
 				<input type="submit" value="Valider l'ajout" />
 	     	</p>
     	</form>
-    	
+
     	<a href="index.php">Retour au menu</a>
 
     	<?php
@@ -33,9 +35,9 @@
 				if ($_GET['erreur']==1) {
 					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
 				}
-			}	
+			}
 		?>
-    
+
     </body>
 </html>
 
