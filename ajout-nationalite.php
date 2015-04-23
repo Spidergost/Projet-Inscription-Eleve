@@ -11,15 +11,17 @@
     	<div class="titre">
     		<h1> Ajout d'une nationalité </h1>
     	</div>
+    	<b><u>Ajouter une nationalité</u> : </b>
 		<form method="post" action="traitement-nationalite.php" class="formulaire">
-		
-	    	<p>Nationalité : <br /><input type="text" name="nationalite" /> <br /> </p>
-			
+            </br>
+	    	<p>Nationalité : <input type="text" name="nationalite" /></p>
+
 	      	<p>
 				<input type="submit" value="Valider l'ajout" />
+				<br/>
 	     	</p>
     	</form>
-    	
+
     	<a href="index.php">Retour au menu</a>
 
     	<?php
@@ -28,8 +30,8 @@
 				if ($_GET['erreur']==1) {
 					echo "<script>alert('Veuillez remplir le formulaire en entier.')</script>";
 				}
-			}	
+			}
 		?>
-    
+
     </body>
 </html>
